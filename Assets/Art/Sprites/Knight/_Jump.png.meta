@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -122,20 +122,20 @@ TextureImporter:
       name: _Jump_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 0
         y: 0
-        width: 27
-        height: 39
+        width: 120
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1edd7df45f166c5d0800000000000000
-      internalID: -3042636792007762463
+      spriteID: 504bdc18d7a7df5439e397f08ff4f3b7
+      internalID: -1570809365
       vertices: []
       indices: 
       edges: []
@@ -144,20 +144,20 @@ TextureImporter:
       name: _Jump_1
       rect:
         serializedVersion: 2
-        x: 163
+        x: 120
         y: 0
-        width: 27
-        height: 39
+        width: 120
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e34362f7a8129b00800000000000000
-      internalID: 833755990622159847
+      spriteID: 4fce70c29ac6a5b4d9e36137e874ab92
+      internalID: -435390614
       vertices: []
       indices: 
       edges: []
@@ -166,20 +166,20 @@ TextureImporter:
       name: _Jump_2
       rect:
         serializedVersion: 2
-        x: 283
+        x: 240
         y: 0
-        width: 27
-        height: 39
+        width: 120
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d438bb4bd703188e0800000000000000
-      internalID: -1693018668453362867
+      spriteID: 9158de547f1aaf84e8948f9814690e3c
+      internalID: -936417675
       vertices: []
       indices: 
       edges: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 31899711705052241b9112939cfa67ca
     internalID: 0
     vertices: []
     indices: 
@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      _Jump_0: -1570809365
+      _Jump_1: -435390614
+      _Jump_2: -936417675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

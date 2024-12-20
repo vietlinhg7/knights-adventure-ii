@@ -182,7 +182,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   dashingPower: 7
-  dashingTime: 1
+  dashingTime: 1.1
   dashingCooldown: 0.2
   tr: {fileID: 0}
 --- !u!212 &94455394

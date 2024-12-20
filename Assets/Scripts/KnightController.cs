@@ -68,6 +68,7 @@ public class KnightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("isGrounded", isGrounded());
         if (isDashing)
         {
             return;
@@ -83,12 +84,11 @@ public class KnightController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         else if (horizontal < -0.01f)
             transform.localScale = Vector3.one;
-        if (Input.GetKey(KeyCode.Space) && isGrounded())
+        if (Input.GetKey(KeyCode.S) && isGrounded())
         {
             Jump();
             animator.SetTrigger("jump");
         }
-        animator.SetBool("isGrounded", isGrounded());
         if (Input.GetKey(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());

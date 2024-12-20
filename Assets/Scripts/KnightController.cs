@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class KnightController : MonoBehaviour
 {
@@ -20,6 +22,12 @@ public class KnightController : MonoBehaviour
     AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private LayerMask groundLayer;
+    private bool canDash = true;
+    private bool isDashing;
+    public float dashingPower = 24f;
+    public float dashingTime = 1;
+    public float dashingCooldown = 1f;
+    [SerializeField] private TrailRenderer tr;
     //void Launch()
     //{
     //    GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f,
@@ -50,6 +58,7 @@ public class KnightController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+        tr = GetComponent<TrailRenderer>();
     }
 
     public void PlaySound(AudioClip clip)
@@ -59,6 +68,10 @@ public class KnightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
         horizontal = Input.GetAxis("Horizontal");
         //if (isInvincible)
         //{
@@ -70,8 +83,16 @@ public class KnightController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         else if (horizontal < -0.01f)
             transform.localScale = Vector3.one;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && isGrounded())
+        {
             Jump();
+            animator.SetTrigger("jump");
+        }
+        animator.SetBool("isGrounded", isGrounded());
+        if (Input.GetKey(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    Launch();
@@ -94,10 +115,13 @@ public class KnightController : MonoBehaviour
         //animator.SetFloat("Look Y", lookDirection.y);
         animator.SetBool("run", horizontal != 0);
         animator.SetFloat("yVelocity", rigidbody2d.linearVelocity.y);
-        animator.SetBool("jump", !isGrounded());
     }
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
         rigidbody2d.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, rigidbody2d.linearVelocity.y);
     }
     private void Jump()
@@ -115,5 +139,18 @@ public class KnightController : MonoBehaviour
         Vector2 boxSize = new Vector2(boxCollider.bounds.size.x, boxCollider.bounds.size.y);
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxSize, 0, Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
+    }
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        animator.SetTrigger("dash");
+        rigidbody2d.linearVelocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }

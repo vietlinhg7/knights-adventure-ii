@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class KnightController : MonoBehaviour
 {
-    //public float timeInvincible = 2.0f;
-    //bool isInvincible;
-    //float invincibleTimer;
+    public float timeInvincible = 2.0f;
+    bool isInvincible;
+    float invincibleTimer;
     public float speed = 2.5f;
     public float jumpForce = 2.5f;
     //public int maxHealth = 5;
@@ -28,6 +28,13 @@ public class KnightController : MonoBehaviour
     public float dashingTime = 1;
     public float dashingCooldown = 1f;
     [SerializeField] private TrailRenderer tr;
+    private GameObject attackArea = default;
+    private GameObject attackArea2 = default;
+
+    private bool attacking = false; 
+
+    private float attackTime = 0.21f;
+    private float attackTime2 = 0.35f;
     //void Launch()
     //{
     //    GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f,
@@ -59,6 +66,10 @@ public class KnightController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         tr = GetComponent<TrailRenderer>();
+        attackArea = transform.GetChild(0).gameObject;
+        attackArea2 = transform.GetChild(1).gameObject;
+        attackArea.SetActive(false);
+        attackArea2.SetActive(false);
     }
 
     public void PlaySound(AudioClip clip)
@@ -69,29 +80,38 @@ public class KnightController : MonoBehaviour
     void Update()
     {
         animator.SetBool("isGrounded", isGrounded());
+        animator.SetBool("attacking", attacking);
         if (isDashing)
         {
             return;
         }
         horizontal = Input.GetAxis("Horizontal");
-        //if (isInvincible)
-        //{
-        //    invincibleTimer -= Time.deltaTime;
-        //    if (invincibleTimer < 0)
-        //        isInvincible = false;
-        //}
         if (horizontal > 0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
         else if (horizontal < -0.01f)
             transform.localScale = Vector3.one;
-        if (Input.GetKey(KeyCode.S) && isGrounded())
+        if (attacking)
+        {
+            return;
+        }
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+        }
+        if (Input.GetKey(KeyCode.Z) && isGrounded())
+        {
+            StartCoroutine(Attack());
+        }
+        else if (Input.GetKey(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+        else if (Input.GetKey(KeyCode.X) && isGrounded())
         {
             Jump();
             animator.SetTrigger("jump");
-        }
-        if (Input.GetKey(KeyCode.LeftShift) && canDash)
-        {
-            StartCoroutine(Dash());
         }
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -119,6 +139,10 @@ public class KnightController : MonoBehaviour
     private void FixedUpdate()
     {
         if (isDashing)
+        {
+            return;
+        }
+        if (attacking)
         {
             return;
         }
@@ -152,5 +176,30 @@ public class KnightController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+    private IEnumerator Attack()
+    {
+        int count = 0;
+        do
+        {
+            if (count % 2 == 0)
+            {
+                attacking = true;
+                attackArea.SetActive(true);
+                yield return new WaitForSeconds(attackTime);
+                rigidbody2d.linearVelocity = new Vector2(0f, 0f);
+                attackArea.SetActive(false);
+            }
+            else
+            {
+                attacking = true;
+                attackArea2.SetActive(true);
+                yield return new WaitForSeconds(attackTime);
+                rigidbody2d.linearVelocity = new Vector2(0f, 0f);
+                attackArea2.SetActive(false);
+            }
+            count = count + 1;
+        } while (Input.GetKey(KeyCode.Z) && isGrounded());
+        attacking = false;
     }
 }

@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_ArcherAttack_strip_NoBkg_0: 7243615536323895233
+      spr_ArcherAttack_strip_NoBkg_1: 6759640509303396367
+      spr_ArcherAttack_strip_NoBkg_10: -3284696614204815154
+      spr_ArcherAttack_strip_NoBkg_11: 437343341963369431
+      spr_ArcherAttack_strip_NoBkg_12: 8427264711992668458
+      spr_ArcherAttack_strip_NoBkg_13: -6043847795777448549
+      spr_ArcherAttack_strip_NoBkg_14: -83384386637133886
+      spr_ArcherAttack_strip_NoBkg_15: -1867770427908137541
+      spr_ArcherAttack_strip_NoBkg_16: -894835629556058496
+      spr_ArcherAttack_strip_NoBkg_17: 9171838437411179919
+      spr_ArcherAttack_strip_NoBkg_2: -2756151581962605931
+      spr_ArcherAttack_strip_NoBkg_3: 7049770765452447389
+      spr_ArcherAttack_strip_NoBkg_4: 4389246912445186638
+      spr_ArcherAttack_strip_NoBkg_5: -1294576501022817952
+      spr_ArcherAttack_strip_NoBkg_6: 3837543601976821850
+      spr_ArcherAttack_strip_NoBkg_7: 8479706863885118980
+      spr_ArcherAttack_strip_NoBkg_8: 999227502422942335
+      spr_ArcherAttack_strip_NoBkg_9: -6525645608432652152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

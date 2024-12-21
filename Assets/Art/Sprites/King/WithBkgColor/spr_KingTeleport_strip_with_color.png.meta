@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingTeleport_strip_with_color_0: -9164296237020335296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

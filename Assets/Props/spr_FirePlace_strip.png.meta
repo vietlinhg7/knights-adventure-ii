@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_FirePlace_strip_0: -4469646849258768430
+      spr_FirePlace_strip_1: -6131998599118182881
+      spr_FirePlace_strip_2: 1238807638189596906
+      spr_FirePlace_strip_3: 8404199459280529110
+      spr_FirePlace_strip_4: 4133057478686257665
+      spr_FirePlace_strip_5: 645755205914200573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

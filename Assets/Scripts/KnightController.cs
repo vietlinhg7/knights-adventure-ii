@@ -128,7 +128,7 @@ public class KnightController : MonoBehaviour
     {
         if (isGrounded())
         {
-            rigidbody2d.linearVelocity = Vector2.up * jumpForce;
+            rigidbody2d.linearVelocity = Vector2.up * jumpForce * 4 / 3;
             animator.SetTrigger("jump");
         }
         

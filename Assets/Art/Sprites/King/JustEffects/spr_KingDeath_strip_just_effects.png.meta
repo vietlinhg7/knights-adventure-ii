@@ -622,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingDeath_strip_just_effects_0: -5940924178306209663
+      spr_KingDeath_strip_just_effects_1: 3734261445731879768
+      spr_KingDeath_strip_just_effects_10: 3944365040049935016
+      spr_KingDeath_strip_just_effects_11: -8447001662379353890
+      spr_KingDeath_strip_just_effects_12: 6042732234581236387
+      spr_KingDeath_strip_just_effects_13: 4046361975079084660
+      spr_KingDeath_strip_just_effects_14: -1117864691529285213
+      spr_KingDeath_strip_just_effects_15: -5131929419919772778
+      spr_KingDeath_strip_just_effects_16: -4686012338258684592
+      spr_KingDeath_strip_just_effects_17: 346640103960473771
+      spr_KingDeath_strip_just_effects_18: 3870125010583360009
+      spr_KingDeath_strip_just_effects_19: -7151504504174061950
+      spr_KingDeath_strip_just_effects_2: 1744196981011069149
+      spr_KingDeath_strip_just_effects_3: -3106804321486001159
+      spr_KingDeath_strip_just_effects_4: 6068405082736470424
+      spr_KingDeath_strip_just_effects_5: -5069797256510938917
+      spr_KingDeath_strip_just_effects_6: -3813021697172921746
+      spr_KingDeath_strip_just_effects_7: 1549007561108886336
+      spr_KingDeath_strip_just_effects_8: -3222022829385747655
+      spr_KingDeath_strip_just_effects_9: 5035409356671319297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

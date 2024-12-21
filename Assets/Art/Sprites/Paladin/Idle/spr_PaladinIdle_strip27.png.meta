@@ -797,7 +797,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinIdle_strip27_0: 1068673994568834306
+      spr_PaladinIdle_strip27_1: -7835484515175704713
+      spr_PaladinIdle_strip27_10: -1490363921832981526
+      spr_PaladinIdle_strip27_11: -3996123752302901682
+      spr_PaladinIdle_strip27_12: -3855622671133942454
+      spr_PaladinIdle_strip27_13: -388678261634242918
+      spr_PaladinIdle_strip27_14: -4958318726323184148
+      spr_PaladinIdle_strip27_15: 5469396684549918765
+      spr_PaladinIdle_strip27_16: -7547848546673576571
+      spr_PaladinIdle_strip27_17: -4882204719903227588
+      spr_PaladinIdle_strip27_18: -540738112953434897
+      spr_PaladinIdle_strip27_19: -2679970599984352601
+      spr_PaladinIdle_strip27_2: 2295224611132946092
+      spr_PaladinIdle_strip27_20: -5681599997041847540
+      spr_PaladinIdle_strip27_21: -5380534822070041987
+      spr_PaladinIdle_strip27_22: 649497760611304046
+      spr_PaladinIdle_strip27_23: -170610278366912838
+      spr_PaladinIdle_strip27_24: -5386388558307181378
+      spr_PaladinIdle_strip27_25: 7835003873757499151
+      spr_PaladinIdle_strip27_26: -7557794404153542016
+      spr_PaladinIdle_strip27_3: 270708588346817285
+      spr_PaladinIdle_strip27_4: 95866077883126091
+      spr_PaladinIdle_strip27_5: 5762364202774246496
+      spr_PaladinIdle_strip27_6: -3518687458173744030
+      spr_PaladinIdle_strip27_7: 5521401240047571967
+      spr_PaladinIdle_strip27_8: -1660392994229856926
+      spr_PaladinIdle_strip27_9: -1285222506944981789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinGetHitEffect_strip12_0: -688004030637184491
+      spr_PaladinGetHitEffect_strip12_1: 2228384103323835972
+      spr_PaladinGetHitEffect_strip12_2: -1272885860198771051
+      spr_PaladinGetHitEffect_strip12_3: 5434536042826468622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

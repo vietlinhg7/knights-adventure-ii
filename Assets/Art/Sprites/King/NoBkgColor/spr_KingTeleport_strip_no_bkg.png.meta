@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingTeleport_strip_no_bkg_0: 5417442917104082681
+      spr_KingTeleport_strip_no_bkg_1: 6624763282508260520
+      spr_KingTeleport_strip_no_bkg_10: -5476789631950314176
+      spr_KingTeleport_strip_no_bkg_11: -8217375365023963966
+      spr_KingTeleport_strip_no_bkg_12: 6369635755726342345
+      spr_KingTeleport_strip_no_bkg_13: 2433888984911913015
+      spr_KingTeleport_strip_no_bkg_14: -6037256911930631092
+      spr_KingTeleport_strip_no_bkg_15: 2778534686790025243
+      spr_KingTeleport_strip_no_bkg_16: -7463520446313071630
+      spr_KingTeleport_strip_no_bkg_17: 131638466188859338
+      spr_KingTeleport_strip_no_bkg_2: -4891446920680473493
+      spr_KingTeleport_strip_no_bkg_3: 1562185342082760488
+      spr_KingTeleport_strip_no_bkg_4: -2313889986728133796
+      spr_KingTeleport_strip_no_bkg_5: 5281864719813286560
+      spr_KingTeleport_strip_no_bkg_6: -1094374811839024578
+      spr_KingTeleport_strip_no_bkg_7: -2098946023494936521
+      spr_KingTeleport_strip_no_bkg_8: -6393976038432097256
+      spr_KingTeleport_strip_no_bkg_9: -4948760418906511579
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -597,7 +597,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinAttackEffect_strip41_0: 6280783159683911706
+      spr_PaladinAttackEffect_strip41_1: -1369072318756445226
+      spr_PaladinAttackEffect_strip41_10: -3007991853824658464
+      spr_PaladinAttackEffect_strip41_11: -6629325533477243447
+      spr_PaladinAttackEffect_strip41_12: 6318399276216209286
+      spr_PaladinAttackEffect_strip41_13: -226322677624382555
+      spr_PaladinAttackEffect_strip41_14: 2696904148906698244
+      spr_PaladinAttackEffect_strip41_15: -4232658659070715821
+      spr_PaladinAttackEffect_strip41_16: -6000947507862729770
+      spr_PaladinAttackEffect_strip41_17: -1939589513035915817
+      spr_PaladinAttackEffect_strip41_18: 6132956333470178498
+      spr_PaladinAttackEffect_strip41_2: 3763680901208532985
+      spr_PaladinAttackEffect_strip41_3: -8652661368302935678
+      spr_PaladinAttackEffect_strip41_4: 5467343081277980629
+      spr_PaladinAttackEffect_strip41_5: -8406798406394537306
+      spr_PaladinAttackEffect_strip41_6: 4318275977825272762
+      spr_PaladinAttackEffect_strip41_7: 5022171979757009811
+      spr_PaladinAttackEffect_strip41_8: -3690350039932516588
+      spr_PaladinAttackEffect_strip41_9: 6288327150304096205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinGetHitWithEffect_strip12_0: -5056165738905484102
+      spr_PaladinGetHitWithEffect_strip12_1: -1170732900397057324
+      spr_PaladinGetHitWithEffect_strip12_10: -3819876514725164524
+      spr_PaladinGetHitWithEffect_strip12_11: -3027689723502054807
+      spr_PaladinGetHitWithEffect_strip12_2: 1233617628715212466
+      spr_PaladinGetHitWithEffect_strip12_3: 6374870052105159790
+      spr_PaladinGetHitWithEffect_strip12_4: -1224026807554464462
+      spr_PaladinGetHitWithEffect_strip12_5: -6399640178379742863
+      spr_PaladinGetHitWithEffect_strip12_6: -637951622025656114
+      spr_PaladinGetHitWithEffect_strip12_7: 2532444110898038820
+      spr_PaladinGetHitWithEffect_strip12_8: 5484573559420611128
+      spr_PaladinGetHitWithEffect_strip12_9: 2415515167313159479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

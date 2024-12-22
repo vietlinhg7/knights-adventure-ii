@@ -1572,7 +1572,65 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_King2combo_NoEffects_0: -2228217235009797306
+      spr_King2combo_NoEffects_1: -5354256563541071460
+      spr_King2combo_NoEffects_10: 1471649621927164228
+      spr_King2combo_NoEffects_11: -3362841385272896108
+      spr_King2combo_NoEffects_12: 1830996593774183857
+      spr_King2combo_NoEffects_13: 5850050305029279298
+      spr_King2combo_NoEffects_14: -6875775752614580417
+      spr_King2combo_NoEffects_15: -1244543539312500426
+      spr_King2combo_NoEffects_16: 450070536662442828
+      spr_King2combo_NoEffects_17: 7526300454810294412
+      spr_King2combo_NoEffects_18: 4236185702117248835
+      spr_King2combo_NoEffects_19: -1854256730894976882
+      spr_King2combo_NoEffects_2: 2509781075734678079
+      spr_King2combo_NoEffects_20: 3136086539285540098
+      spr_King2combo_NoEffects_21: -980610858426266554
+      spr_King2combo_NoEffects_22: 3045520212308005824
+      spr_King2combo_NoEffects_23: 7487249953342078163
+      spr_King2combo_NoEffects_24: -6367008170545463366
+      spr_King2combo_NoEffects_25: 2839569037872483703
+      spr_King2combo_NoEffects_26: 7673616498684075738
+      spr_King2combo_NoEffects_27: 7375278604250038410
+      spr_King2combo_NoEffects_28: 8705532556344221676
+      spr_King2combo_NoEffects_29: -1753507347421185936
+      spr_King2combo_NoEffects_3: -3823072697029800000
+      spr_King2combo_NoEffects_30: -5610941843459515772
+      spr_King2combo_NoEffects_31: -2465636558410209925
+      spr_King2combo_NoEffects_32: -8839364297012457879
+      spr_King2combo_NoEffects_33: 7040613259923697165
+      spr_King2combo_NoEffects_34: -8772841822399808237
+      spr_King2combo_NoEffects_35: -4100444762250053224
+      spr_King2combo_NoEffects_36: 6758195547757345174
+      spr_King2combo_NoEffects_37: 1927519380388164522
+      spr_King2combo_NoEffects_38: 8617931889773822794
+      spr_King2combo_NoEffects_39: -3784188143804936636
+      spr_King2combo_NoEffects_4: 4672963857372801573
+      spr_King2combo_NoEffects_40: -141524614809710316
+      spr_King2combo_NoEffects_41: 2189356289773683059
+      spr_King2combo_NoEffects_42: 7205406480404328312
+      spr_King2combo_NoEffects_43: 8747416807440178277
+      spr_King2combo_NoEffects_44: 4414250515659340087
+      spr_King2combo_NoEffects_45: 993441741658444782
+      spr_King2combo_NoEffects_46: 1168226720747535858
+      spr_King2combo_NoEffects_47: -1805539809996976286
+      spr_King2combo_NoEffects_48: -1135202522050967748
+      spr_King2combo_NoEffects_49: -723736871327236217
+      spr_King2combo_NoEffects_5: -8543961280621587271
+      spr_King2combo_NoEffects_50: 7688261430064516259
+      spr_King2combo_NoEffects_51: -1609156967798912481
+      spr_King2combo_NoEffects_52: 53253419462870374
+      spr_King2combo_NoEffects_53: -5214735676016137466
+      spr_King2combo_NoEffects_54: 721202525130859269
+      spr_King2combo_NoEffects_55: -1479248430927843709
+      spr_King2combo_NoEffects_56: 1119841672607695040
+      spr_King2combo_NoEffects_57: -1933101726584416347
+      spr_King2combo_NoEffects_6: 8319956574922587922
+      spr_King2combo_NoEffects_7: -5420677590764231624
+      spr_King2combo_NoEffects_8: -4759431133102620327
+      spr_King2combo_NoEffects_9: -8286487638760381068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

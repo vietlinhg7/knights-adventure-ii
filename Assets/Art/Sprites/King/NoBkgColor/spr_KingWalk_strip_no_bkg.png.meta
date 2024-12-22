@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingWalk_strip_no_bkg_0: -5643622218009816433
+      spr_KingWalk_strip_no_bkg_1: -1087648642890301117
+      spr_KingWalk_strip_no_bkg_2: -3543970328039337817
+      spr_KingWalk_strip_no_bkg_3: 2295633779491994600
+      spr_KingWalk_strip_no_bkg_4: 1710020760121204659
+      spr_KingWalk_strip_no_bkg_5: 3321251954470918392
+      spr_KingWalk_strip_no_bkg_6: 7525794570583517863
+      spr_KingWalk_strip_no_bkg_7: -1414924047416912154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingDeath_strip_with_color_0: 4951960434701079193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

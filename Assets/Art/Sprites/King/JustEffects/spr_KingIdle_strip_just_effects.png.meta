@@ -472,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingIdle_strip_just_effects_0: -1917159635061568246
+      spr_KingIdle_strip_just_effects_1: 3062178621447150610
+      spr_KingIdle_strip_just_effects_10: -8369448279725119889
+      spr_KingIdle_strip_just_effects_11: -4168332819466201262
+      spr_KingIdle_strip_just_effects_12: -3700118636827969620
+      spr_KingIdle_strip_just_effects_13: -6060689007835364289
+      spr_KingIdle_strip_just_effects_2: 5232326137487370166
+      spr_KingIdle_strip_just_effects_3: -9047886534150928087
+      spr_KingIdle_strip_just_effects_4: -7496243228587529383
+      spr_KingIdle_strip_just_effects_5: -6244668617553505719
+      spr_KingIdle_strip_just_effects_6: -1241632509108899468
+      spr_KingIdle_strip_just_effects_7: -2088148131063048718
+      spr_KingIdle_strip_just_effects_8: -8831239432392548825
+      spr_KingIdle_strip_just_effects_9: 5177899702389661584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

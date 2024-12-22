@@ -1372,7 +1372,57 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_NecromancerIdle_strip50_0: 7626730168138988562
+      spr_NecromancerIdle_strip50_1: 8520106110633537520
+      spr_NecromancerIdle_strip50_10: -2216560630174716910
+      spr_NecromancerIdle_strip50_11: 7378274676278831671
+      spr_NecromancerIdle_strip50_12: 3559984110997061980
+      spr_NecromancerIdle_strip50_13: -8093324292403934330
+      spr_NecromancerIdle_strip50_14: 893571393658057352
+      spr_NecromancerIdle_strip50_15: 1568147599057384586
+      spr_NecromancerIdle_strip50_16: 7062316435265413034
+      spr_NecromancerIdle_strip50_17: 4168858376668375556
+      spr_NecromancerIdle_strip50_18: 7940264212817063819
+      spr_NecromancerIdle_strip50_19: 2399589060654585867
+      spr_NecromancerIdle_strip50_2: 511074625953098909
+      spr_NecromancerIdle_strip50_20: 178708638989738784
+      spr_NecromancerIdle_strip50_21: -2367721283454301827
+      spr_NecromancerIdle_strip50_22: -6221503758923972294
+      spr_NecromancerIdle_strip50_23: 3067475905168481168
+      spr_NecromancerIdle_strip50_24: -8150002887058213577
+      spr_NecromancerIdle_strip50_25: -6548510279927382858
+      spr_NecromancerIdle_strip50_26: -3415064652650947309
+      spr_NecromancerIdle_strip50_27: -3859914578825341087
+      spr_NecromancerIdle_strip50_28: 9168103571211693886
+      spr_NecromancerIdle_strip50_29: -5299752777567754261
+      spr_NecromancerIdle_strip50_3: -8343890166542191981
+      spr_NecromancerIdle_strip50_30: -120721648536192413
+      spr_NecromancerIdle_strip50_31: 2407951593696597977
+      spr_NecromancerIdle_strip50_32: -5558733216314572747
+      spr_NecromancerIdle_strip50_33: 2429102109200198534
+      spr_NecromancerIdle_strip50_34: -2393910506085615932
+      spr_NecromancerIdle_strip50_35: -5753728059988047993
+      spr_NecromancerIdle_strip50_36: 7828385836842096808
+      spr_NecromancerIdle_strip50_37: -2526996191258202148
+      spr_NecromancerIdle_strip50_38: 7907540614971000219
+      spr_NecromancerIdle_strip50_39: -1488181198212703231
+      spr_NecromancerIdle_strip50_4: -9057659419877727767
+      spr_NecromancerIdle_strip50_40: -1417160342440903872
+      spr_NecromancerIdle_strip50_41: -5287484815598458479
+      spr_NecromancerIdle_strip50_42: 3564661225144541916
+      spr_NecromancerIdle_strip50_43: -2059802836919557617
+      spr_NecromancerIdle_strip50_44: -8692282547470727327
+      spr_NecromancerIdle_strip50_45: 7823648391271976775
+      spr_NecromancerIdle_strip50_46: 6879635567093897637
+      spr_NecromancerIdle_strip50_47: -2830313239282758761
+      spr_NecromancerIdle_strip50_48: -6428380183509996737
+      spr_NecromancerIdle_strip50_49: -2695516657864776847
+      spr_NecromancerIdle_strip50_5: 7549454703321076850
+      spr_NecromancerIdle_strip50_6: -3669759363705498792
+      spr_NecromancerIdle_strip50_7: -7950296900180702161
+      spr_NecromancerIdle_strip50_8: -6583449464043404880
+      spr_NecromancerIdle_strip50_9: 4982982909676871316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

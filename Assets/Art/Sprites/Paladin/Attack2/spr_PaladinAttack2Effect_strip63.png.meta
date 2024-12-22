@@ -1222,7 +1222,51 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinAttack2Effect_strip63_0: 5609423368225070842
+      spr_PaladinAttack2Effect_strip63_1: -7691541083151693240
+      spr_PaladinAttack2Effect_strip63_10: 4052581321224207640
+      spr_PaladinAttack2Effect_strip63_11: 5687652577118688797
+      spr_PaladinAttack2Effect_strip63_12: 1003777711858958294
+      spr_PaladinAttack2Effect_strip63_13: 1456730129802283037
+      spr_PaladinAttack2Effect_strip63_14: -5095878493295088871
+      spr_PaladinAttack2Effect_strip63_15: -2446150892037388019
+      spr_PaladinAttack2Effect_strip63_16: -7896497511395172055
+      spr_PaladinAttack2Effect_strip63_17: -8819018707167072041
+      spr_PaladinAttack2Effect_strip63_18: 4228615723597529765
+      spr_PaladinAttack2Effect_strip63_19: 5968424304350784021
+      spr_PaladinAttack2Effect_strip63_2: -1811173083015054112
+      spr_PaladinAttack2Effect_strip63_20: 535441335282605945
+      spr_PaladinAttack2Effect_strip63_21: 2085572902156026678
+      spr_PaladinAttack2Effect_strip63_22: 6701000035046795414
+      spr_PaladinAttack2Effect_strip63_23: -2127086339419596136
+      spr_PaladinAttack2Effect_strip63_24: -8143102035961875540
+      spr_PaladinAttack2Effect_strip63_25: -7454940921644599274
+      spr_PaladinAttack2Effect_strip63_26: -607279794915079961
+      spr_PaladinAttack2Effect_strip63_27: 8065013147657204838
+      spr_PaladinAttack2Effect_strip63_28: -3099804172189172117
+      spr_PaladinAttack2Effect_strip63_29: -5701617543461823927
+      spr_PaladinAttack2Effect_strip63_3: -3197829555541165662
+      spr_PaladinAttack2Effect_strip63_30: -94937114406268133
+      spr_PaladinAttack2Effect_strip63_31: 2720118697745188642
+      spr_PaladinAttack2Effect_strip63_32: -5906284147962668890
+      spr_PaladinAttack2Effect_strip63_33: 6725155348771910874
+      spr_PaladinAttack2Effect_strip63_34: -5575577918163700409
+      spr_PaladinAttack2Effect_strip63_35: -4781655281006507385
+      spr_PaladinAttack2Effect_strip63_36: -9088955222846298398
+      spr_PaladinAttack2Effect_strip63_37: -3061562328175630981
+      spr_PaladinAttack2Effect_strip63_38: 496136006830741522
+      spr_PaladinAttack2Effect_strip63_39: 8009084671522837613
+      spr_PaladinAttack2Effect_strip63_4: -5265473133599533527
+      spr_PaladinAttack2Effect_strip63_40: -6401777359701154387
+      spr_PaladinAttack2Effect_strip63_41: -6820338221475935647
+      spr_PaladinAttack2Effect_strip63_42: -3563449082316884604
+      spr_PaladinAttack2Effect_strip63_43: -7944451397569004598
+      spr_PaladinAttack2Effect_strip63_5: 880928827609717386
+      spr_PaladinAttack2Effect_strip63_6: -7451204201064029467
+      spr_PaladinAttack2Effect_strip63_7: -5866805443405131020
+      spr_PaladinAttack2Effect_strip63_8: -1348753640200819955
+      spr_PaladinAttack2Effect_strip63_9: -4842687661305053020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

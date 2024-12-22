@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingWalk_strip_with_color_0: 5691707614963833359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

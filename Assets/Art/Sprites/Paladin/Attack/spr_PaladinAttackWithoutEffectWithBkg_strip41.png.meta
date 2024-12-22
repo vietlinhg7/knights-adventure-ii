@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinAttackWithoutEffectWithBkg_strip41_0: -2464182867890782153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

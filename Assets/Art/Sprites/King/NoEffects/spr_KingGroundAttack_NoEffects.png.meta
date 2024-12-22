@@ -872,7 +872,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingGroundAttack_NoEffects_0: 6566796270005692559
+      spr_KingGroundAttack_NoEffects_1: 2856117183422636007
+      spr_KingGroundAttack_NoEffects_10: -8245018324584994670
+      spr_KingGroundAttack_NoEffects_11: 7541591658311230895
+      spr_KingGroundAttack_NoEffects_12: -5798383608033517712
+      spr_KingGroundAttack_NoEffects_13: -8268013865893233399
+      spr_KingGroundAttack_NoEffects_14: -2057632815186702241
+      spr_KingGroundAttack_NoEffects_15: 3703171159400816618
+      spr_KingGroundAttack_NoEffects_16: -4064285087920505039
+      spr_KingGroundAttack_NoEffects_17: -6409613791255782609
+      spr_KingGroundAttack_NoEffects_18: -8441238976890591306
+      spr_KingGroundAttack_NoEffects_19: 7517742391207883439
+      spr_KingGroundAttack_NoEffects_2: -2115487182907696817
+      spr_KingGroundAttack_NoEffects_20: 1607807373705649006
+      spr_KingGroundAttack_NoEffects_21: -4936993060494135752
+      spr_KingGroundAttack_NoEffects_22: -1706445700448948095
+      spr_KingGroundAttack_NoEffects_23: -1567944706119071338
+      spr_KingGroundAttack_NoEffects_24: -8307891166594787893
+      spr_KingGroundAttack_NoEffects_25: -8405276386673924636
+      spr_KingGroundAttack_NoEffects_26: -1289539831358636327
+      spr_KingGroundAttack_NoEffects_27: -2444920973160372419
+      spr_KingGroundAttack_NoEffects_28: 8446652390612722387
+      spr_KingGroundAttack_NoEffects_29: 7407954643943602313
+      spr_KingGroundAttack_NoEffects_3: -1865839729341189132
+      spr_KingGroundAttack_NoEffects_4: -2763182187265107714
+      spr_KingGroundAttack_NoEffects_5: 8720970114819957388
+      spr_KingGroundAttack_NoEffects_6: -6978669731704714650
+      spr_KingGroundAttack_NoEffects_7: -4803550990484907535
+      spr_KingGroundAttack_NoEffects_8: 3933098149811624644
+      spr_KingGroundAttack_NoEffects_9: -2569734147880370665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

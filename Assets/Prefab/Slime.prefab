@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2412154749371957494}
   - component: {fileID: 226024278723048249}
   - component: {fileID: 2845234493482870875}
+  - component: {fileID: 7094599332752792717}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Player
@@ -124,10 +125,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  health: {fileID: 7094599332752792717}
   animator: {fileID: 2569443848989128831}
   range: 1
   jumpForce: 2.5
-  hitPoints: 5
 --- !u!50 &226024278723048249
 Rigidbody2D:
   serializedVersion: 4
@@ -200,3 +201,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &7094599332752792717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70616085850316772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22dc3f77345c84545b98f366672ae560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100

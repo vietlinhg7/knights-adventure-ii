@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using Unity.VisualScripting.ReorderableList;
 
 public enum EnemyState
 {
@@ -22,23 +23,32 @@ public class EnemyController : MonoBehaviour
     private float hurtDuration = 1;
 
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Health health;
     private EnemyState enemyState = EnemyState.Idle;
     public EnemyState EnemyState
     {
         get { return enemyState; }
         set
         {
+            this.enemyState = value;
+
             switch (enemyState)
             {
+                case EnemyState.Idle:
+                    break;
+                case EnemyState.Moving:
+                    break;
+                case EnemyState.Hurt:
+                    break;
+                case EnemyState.Death:
+                    break;
             }
-            this.enemyState = value;
         }
     }
 
     public Animator animator;
     public float range = 1f;
     public float jumpForce = 2.5f;
-    public float hitPoints = 10f;
 
     private Vector2 rootPosition = new Vector2();
     private bool iframe = false;
@@ -57,6 +67,7 @@ public class EnemyController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
 
         rootPosition = gameObject.transform.position;
+        StartCoroutine(Moving());
     }
 
     private void OnEnable()
@@ -66,15 +77,13 @@ public class EnemyController : MonoBehaviour
 
     //private void Update() // Change to coroutine to reduce update call
     //{
-    //    Vector2 position = rigidbody2d.position;
-    //    position.x = rootPosition.x + range * MathF.Sin(Time.fixedTime);
-    //    rigidbody2d.MovePosition(position);
     //}
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
-        if (collision.gameObject.name == "Knight" && !iframe)
+        if (collision.gameObject.name.Contains("AttackArea") && !iframe)
         {
+            Debug.Log(collision.gameObject.transform);
             rigidbody2d.AddForce(new Vector2(MathF.Sign(gameObject.transform.position.x - collision.gameObject.transform.position.x), 1) * 2.5f, ForceMode2D.Impulse);
             StartCoroutine(Hurt());
         }
@@ -91,15 +100,26 @@ public class EnemyController : MonoBehaviour
 
     #region Enemy Behaviours
 
-    //private 
+    private IEnumerator Moving()
+    {
+        animator.SetTrigger("Move");
+        rootPosition = gameObject.transform.position;
+        while (enemyState == EnemyState.Moving)
+        {
+            Vector2 position = rigidbody2d.position;
+            position.x = rootPosition.x + range * MathF.Sin(Time.fixedTime);
+            rigidbody2d.MovePosition(position);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     private IEnumerator Hurt()
     {
         iframe = true;
-        hitPoints--;
+        //health.Damage(1);
         Debug.Log("Hurt");
 
-        if (hitPoints <= 0)
+        if (false) //Health = 0
         {
             yield return Death();
         }
@@ -107,7 +127,7 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetTrigger("Hurt");
             yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-            animator.SetTrigger("Hurt");
+            StartCoroutine(Moving());
         }
 
         iframe = false;

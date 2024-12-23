@@ -90,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,7 +111,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -155,10 +155,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 50
-        width: 38
-        height: 41
+        x: 50
+        y: 0
+        width: 25
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +177,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_1
       rect:
         serializedVersion: 2
-        x: 173
-        y: 50
-        width: 38
-        height: 40
+        x: 182
+        y: 0
+        width: 23
+        height: 38
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +199,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_2
       rect:
         serializedVersion: 2
-        x: 301
-        y: 50
-        width: 38
-        height: 36
+        x: 311
+        y: 0
+        width: 27
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +221,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_3
       rect:
         serializedVersion: 2
-        x: 429
-        y: 50
-        width: 38
-        height: 28
+        x: 432
+        y: 0
+        width: 35
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,10 +243,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_4
       rect:
         serializedVersion: 2
-        x: 557
-        y: 50
-        width: 38
-        height: 41
+        x: 562
+        y: 0
+        width: 32
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +265,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_5
       rect:
         serializedVersion: 2
-        x: 685
-        y: 50
-        width: 39
-        height: 33
+        x: 693
+        y: 0
+        width: 31
+        height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +287,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_6
       rect:
         serializedVersion: 2
-        x: 813
-        y: 50
-        width: 38
-        height: 36
+        x: 815
+        y: 4
+        width: 33
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +309,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_7
       rect:
         serializedVersion: 2
-        x: 941
-        y: 50
-        width: 38
-        height: 44
+        x: 945
+        y: 0
+        width: 25
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_8
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 50
-        width: 38
-        height: 37
+        x: 1072
+        y: 0
+        width: 30
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,10 +353,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_9
       rect:
         serializedVersion: 2
-        x: 1197
-        y: 50
-        width: 38
-        height: 41
+        x: 1200
+        y: 2
+        width: 4
+        height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -375,10 +375,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_10
       rect:
         serializedVersion: 2
-        x: 1325
-        y: 50
-        width: 38
-        height: 41
+        x: 1202
+        y: 0
+        width: 25
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +397,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_11
       rect:
         serializedVersion: 2
-        x: 1452
-        y: 50
-        width: 40
-        height: 41
+        x: 1228
+        y: 2
+        width: 4
+        height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +419,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_12
       rect:
         serializedVersion: 2
-        x: 1581
-        y: 50
-        width: 38
-        height: 41
+        x: 1326
+        y: 0
+        width: 36
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,10 +441,10 @@ TextureImporter:
       name: spr_ArcherDash_strip_NoBkg_13
       rect:
         serializedVersion: 2
-        x: 1709
-        y: 50
-        width: 38
-        height: 41
+        x: 1452
+        y: 0
+        width: 40
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,6 +455,50 @@ TextureImporter:
       bones: []
       spriteID: 043fc2299b1d01f45a741864d679b13a
       internalID: 503682029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_ArcherDash_strip_NoBkg_14
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 0
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c9f4707da96d94d92ea18cfd501a60
+      internalID: 1784513534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_ArcherDash_strip_NoBkg_15
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 0
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eadfe577e775b945a8a7afa3b45fdc5
+      internalID: -954462010
       vertices: []
       indices: 
       edges: []
@@ -479,6 +523,8 @@ TextureImporter:
       spr_ArcherDash_strip_NoBkg_11: -1614698629
       spr_ArcherDash_strip_NoBkg_12: -660718080
       spr_ArcherDash_strip_NoBkg_13: 503682029
+      spr_ArcherDash_strip_NoBkg_14: 1784513534
+      spr_ArcherDash_strip_NoBkg_15: -954462010
       spr_ArcherDash_strip_NoBkg_2: -1048196392
       spr_ArcherDash_strip_NoBkg_3: 1295771235
       spr_ArcherDash_strip_NoBkg_4: -2098173249

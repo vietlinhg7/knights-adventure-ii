@@ -17,6 +17,10 @@ public class KnightController : MonoBehaviour
     float horizontal;
     float vertical;
     Vector2 lookDirection;
+    public int characterClass = 0;
+    public Animator knightAnimator;
+    public Animator archerAnimator;
+    public Animator sorcererAnimator;
     public Animator animator;
     //public GameObject projectilePrefab;
     AudioSource audioSource;
@@ -169,6 +173,14 @@ public class KnightController : MonoBehaviour
     //    //UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
     //}
     // Start is called before the first frame update
+    private Animator GetAnimatorByCharacterClass()
+    {
+        if (characterClass == 0)
+            return knightAnimator;
+        else if (characterClass == 1)
+            return archerAnimator;
+        else return sorcererAnimator;
+    }
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -179,6 +191,7 @@ public class KnightController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         tr = GetComponent<TrailRenderer>();
         health = maxHealth;
+        animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
     }
 
     public void PlaySound(AudioClip clip)
@@ -224,6 +237,10 @@ public class KnightController : MonoBehaviour
         {
             Jump();
         }
+        else if (Input.GetKeyDown(KeyCode.F) && isGrounded())
+        {
+            ClassChange();
+        }
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    Launch();
@@ -245,6 +262,12 @@ public class KnightController : MonoBehaviour
         //animator.SetFloat("Look X", lookDirection.x);
         //animator.SetFloat("Look Y", lookDirection.y);
         animator.SetBool("run", horizontal != 0);
+    }
+    private void ClassChange()
+    {
+        characterClass = (characterClass + 1) % 2;
+
+        animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
     }
     private void FixedUpdate()
     {

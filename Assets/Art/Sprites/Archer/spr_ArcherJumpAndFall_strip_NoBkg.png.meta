@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -149,12 +149,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 49
-        width: 40
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 50
+        y: 0
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_1
       rect:
         serializedVersion: 2
-        x: 172
-        y: 49
-        width: 40
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 180
+        y: 0
+        width: 24
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_2
       rect:
         serializedVersion: 2
-        x: 300
-        y: 49
-        width: 40
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 307
+        y: 4
+        width: 26
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,12 +215,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_3
       rect:
         serializedVersion: 2
-        x: 428
-        y: 49
-        width: 40
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 435
+        y: 7
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_4
       rect:
         serializedVersion: 2
-        x: 556
-        y: 49
-        width: 40
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 564
+        y: 6
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_5
       rect:
         serializedVersion: 2
-        x: 684
-        y: 49
-        width: 40
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 690
+        y: 3
+        width: 26
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_6
       rect:
         serializedVersion: 2
-        x: 812
-        y: 49
-        width: 40
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 814
+        y: 3
+        width: 28
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_7
       rect:
         serializedVersion: 2
-        x: 940
-        y: 49
-        width: 40
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 947
+        y: 0
+        width: 29
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_8
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 49
-        width: 40
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1072
+        y: 0
+        width: 32
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_9
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 49
-        width: 40
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1199
+        y: 0
+        width: 34
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_10
       rect:
         serializedVersion: 2
-        x: 1324
-        y: 49
-        width: 40
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1326
+        y: 0
+        width: 36
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: spr_ArcherJumpAndFall_strip_NoBkg_11
       rect:
         serializedVersion: 2
-        x: 1452
-        y: 49
-        width: 40
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1458
+        y: 0
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,7 +413,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7131bf12747f5834e983a49c27b9e5e8
     internalID: 0
     vertices: []
     indices: 

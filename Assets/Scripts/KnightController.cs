@@ -310,6 +310,7 @@ public class KnightController : MonoBehaviour
         tr.emitting = false;
         isDashing = false;
         animator.SetBool("dashing", false);
+        animator.SetBool("isGrounded", isGrounded());
 
         // Wait for the cooldown
         yield return new WaitForSeconds(dashingCooldown);

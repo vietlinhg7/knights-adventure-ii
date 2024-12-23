@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background hollowcaves (3)_0: -5222358676881299805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

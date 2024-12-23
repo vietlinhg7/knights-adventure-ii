@@ -33254,8 +33254,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087373944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3, y: 12.1, z: -10.097462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.4, y: 7.2400002, z: -0.0974617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33263,7 +33263,7 @@ Transform:
   - {fileID: 629033749}
   - {fileID: 183674051}
   - {fileID: 456449390}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2147361768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1087373946
 MonoBehaviour:
@@ -33272,12 +33272,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087373944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cd202f5b64b0864b9d072491113af18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 934761262}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!4 &1270022998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7558842188420802873, guid: da07b9b73859f9749b90dba4d0e2d227, type: 3}
@@ -33461,7 +33462,8 @@ Transform:
   m_LocalPosition: {x: -1.9, y: 4.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1087373945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2147361769
@@ -33548,4 +33550,3 @@ SceneRoots:
   - {fileID: 895811804}
   - {fileID: 877894168}
   - {fileID: 934761262}
-  - {fileID: 1087373945}

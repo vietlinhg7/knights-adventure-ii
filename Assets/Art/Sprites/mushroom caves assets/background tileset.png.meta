@@ -1034,7 +1034,44 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background tileset_0: -411247496793613231
+      background tileset_1: -2943588301593818527
+      background tileset_10: 6453972215085809073
+      background tileset_11: -8950380247635817064
+      background tileset_12: -3673987889259152152
+      background tileset_13: 1355594505219310406
+      background tileset_14: 2816346317758291646
+      background tileset_15: -4314765882580292353
+      background tileset_16: 7296411883047122507
+      background tileset_17: 3653675352648166471
+      background tileset_18: 4121095538491002039
+      background tileset_19: -215695439932402817
+      background tileset_2: 800711504594097145
+      background tileset_20: -1876211249338021543
+      background tileset_21: -7585750578426280289
+      background tileset_22: 4400490986985248252
+      background tileset_23: -1964366196063001412
+      background tileset_24: -2339860508768010694
+      background tileset_25: 4360447015608601087
+      background tileset_26: -6269692537683895224
+      background tileset_27: 6179582718734460601
+      background tileset_28: -440314245494723331
+      background tileset_29: -7620198258815511968
+      background tileset_3: 503307991691900674
+      background tileset_30: -5234904160193369346
+      background tileset_31: -2634589671906160627
+      background tileset_32: -5668569136934408894
+      background tileset_33: 3818317310503502366
+      background tileset_34: 4300798652998026499
+      background tileset_35: 4479059568245621987
+      background tileset_36: 469977613047459585
+      background tileset_4: 5838266704928891366
+      background tileset_5: 5818745438316794070
+      background tileset_6: 2661151824661990830
+      background tileset_7: 8101816356539735790
+      background tileset_8: 7134597407409959568
+      background tileset_9: -7317141958146487460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

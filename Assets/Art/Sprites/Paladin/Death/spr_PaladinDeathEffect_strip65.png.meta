@@ -1497,7 +1497,62 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinDeathEffect_strip65_0: 8432916625397822863
+      spr_PaladinDeathEffect_strip65_1: 7505391671004478767
+      spr_PaladinDeathEffect_strip65_10: -6838286228328351500
+      spr_PaladinDeathEffect_strip65_11: 5208276502550841016
+      spr_PaladinDeathEffect_strip65_12: 8467347675410999442
+      spr_PaladinDeathEffect_strip65_13: 870267338819170661
+      spr_PaladinDeathEffect_strip65_14: 6851262963800355676
+      spr_PaladinDeathEffect_strip65_15: 7233473086846056204
+      spr_PaladinDeathEffect_strip65_16: -7728706136202327354
+      spr_PaladinDeathEffect_strip65_17: -5341070311437306257
+      spr_PaladinDeathEffect_strip65_18: 8225090650140894160
+      spr_PaladinDeathEffect_strip65_19: 6166353693963327729
+      spr_PaladinDeathEffect_strip65_2: 2267824558267892992
+      spr_PaladinDeathEffect_strip65_20: 5059968252437685973
+      spr_PaladinDeathEffect_strip65_21: 7097338090783637346
+      spr_PaladinDeathEffect_strip65_22: -5299995994077859208
+      spr_PaladinDeathEffect_strip65_23: 752854812375085660
+      spr_PaladinDeathEffect_strip65_24: -7827891563516786069
+      spr_PaladinDeathEffect_strip65_25: 2522405789676812338
+      spr_PaladinDeathEffect_strip65_26: -611308378247406450
+      spr_PaladinDeathEffect_strip65_27: -5051877752152496473
+      spr_PaladinDeathEffect_strip65_28: -4580045614047381869
+      spr_PaladinDeathEffect_strip65_29: -8692691764138438565
+      spr_PaladinDeathEffect_strip65_3: 4697820027508861503
+      spr_PaladinDeathEffect_strip65_30: 789587000223779104
+      spr_PaladinDeathEffect_strip65_31: 8317937921782838673
+      spr_PaladinDeathEffect_strip65_32: -665053901858858167
+      spr_PaladinDeathEffect_strip65_33: -1378690073182060145
+      spr_PaladinDeathEffect_strip65_34: 7038939083861646990
+      spr_PaladinDeathEffect_strip65_35: -3431660257765654917
+      spr_PaladinDeathEffect_strip65_36: -6363561902046886215
+      spr_PaladinDeathEffect_strip65_37: -1258620207458973735
+      spr_PaladinDeathEffect_strip65_38: 5557892256789099065
+      spr_PaladinDeathEffect_strip65_39: -4323775252222036145
+      spr_PaladinDeathEffect_strip65_4: -5662401383611412732
+      spr_PaladinDeathEffect_strip65_40: -2948332188971283302
+      spr_PaladinDeathEffect_strip65_41: -6150078222821737048
+      spr_PaladinDeathEffect_strip65_42: 3912636518130230371
+      spr_PaladinDeathEffect_strip65_43: 2182137651114426955
+      spr_PaladinDeathEffect_strip65_44: 4423899431511161063
+      spr_PaladinDeathEffect_strip65_45: -5034502035867344647
+      spr_PaladinDeathEffect_strip65_46: -3552974774459962308
+      spr_PaladinDeathEffect_strip65_47: 8282809516433837356
+      spr_PaladinDeathEffect_strip65_48: 2337504450627426003
+      spr_PaladinDeathEffect_strip65_49: 2461092770003219370
+      spr_PaladinDeathEffect_strip65_5: -3719788926645431707
+      spr_PaladinDeathEffect_strip65_50: 367681856577109414
+      spr_PaladinDeathEffect_strip65_51: 3328748988161913561
+      spr_PaladinDeathEffect_strip65_52: -3764243373184841993
+      spr_PaladinDeathEffect_strip65_53: 7326250816057823666
+      spr_PaladinDeathEffect_strip65_54: 1805950769256980255
+      spr_PaladinDeathEffect_strip65_6: -7566326472707060882
+      spr_PaladinDeathEffect_strip65_7: -7548174082744658864
+      spr_PaladinDeathEffect_strip65_8: 8305441537614448719
+      spr_PaladinDeathEffect_strip65_9: 4582091495155043407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

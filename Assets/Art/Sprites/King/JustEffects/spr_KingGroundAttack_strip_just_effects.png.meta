@@ -547,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingGroundAttack_strip_just_effects_0: 6930555911571652375
+      spr_KingGroundAttack_strip_just_effects_1: 1301295751871663972
+      spr_KingGroundAttack_strip_just_effects_10: -6936630820291217219
+      spr_KingGroundAttack_strip_just_effects_11: -8683638242201220843
+      spr_KingGroundAttack_strip_just_effects_12: 6587555065063279406
+      spr_KingGroundAttack_strip_just_effects_13: -3023613237475380673
+      spr_KingGroundAttack_strip_just_effects_14: -4500085132602912952
+      spr_KingGroundAttack_strip_just_effects_15: 4356711281081965213
+      spr_KingGroundAttack_strip_just_effects_16: 3911459565895929993
+      spr_KingGroundAttack_strip_just_effects_2: -500025569279350387
+      spr_KingGroundAttack_strip_just_effects_3: -6840604370758726535
+      spr_KingGroundAttack_strip_just_effects_4: -2871225367114838870
+      spr_KingGroundAttack_strip_just_effects_5: -5461010883829573445
+      spr_KingGroundAttack_strip_just_effects_6: -5002509683232803675
+      spr_KingGroundAttack_strip_just_effects_7: 2693613274782713699
+      spr_KingGroundAttack_strip_just_effects_8: -339387362906795702
+      spr_KingGroundAttack_strip_just_effects_9: 189052431771081690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

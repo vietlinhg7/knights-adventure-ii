@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinWalk_strip10_0: 6192038765228248838
+      spr_PaladinWalk_strip10_1: 6031083225522680546
+      spr_PaladinWalk_strip10_2: 5515782898148204764
+      spr_PaladinWalk_strip10_3: 4882305682784799698
+      spr_PaladinWalk_strip10_4: -2564351781743491486
+      spr_PaladinWalk_strip10_5: 5256672864688634832
+      spr_PaladinWalk_strip10_6: 3407761274023799031
+      spr_PaladinWalk_strip10_7: 7632484622376573522
+      spr_PaladinWalk_strip10_8: -7910040888702806016
+      spr_PaladinWalk_strip10_9: 5175225417192995392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

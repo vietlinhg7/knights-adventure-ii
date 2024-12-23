@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingIdle_strip_no_bkg_0: 6442420224863997586
+      spr_KingIdle_strip_no_bkg_1: -1925104427962459477
+      spr_KingIdle_strip_no_bkg_10: -4965232834822291082
+      spr_KingIdle_strip_no_bkg_11: -4471284408317928767
+      spr_KingIdle_strip_no_bkg_12: -443897859425391462
+      spr_KingIdle_strip_no_bkg_13: -9100436283037870598
+      spr_KingIdle_strip_no_bkg_14: -5155314265909268356
+      spr_KingIdle_strip_no_bkg_15: 7418123982225022244
+      spr_KingIdle_strip_no_bkg_16: 4016450747696600146
+      spr_KingIdle_strip_no_bkg_17: 2006687762417350082
+      spr_KingIdle_strip_no_bkg_2: -4213395316994854409
+      spr_KingIdle_strip_no_bkg_3: -2388840336980169268
+      spr_KingIdle_strip_no_bkg_4: -819579042697620640
+      spr_KingIdle_strip_no_bkg_5: -2934700441926371141
+      spr_KingIdle_strip_no_bkg_6: -5293275501755673497
+      spr_KingIdle_strip_no_bkg_7: 322870677478634656
+      spr_KingIdle_strip_no_bkg_8: 3213211423227106617
+      spr_KingIdle_strip_no_bkg_9: -4521642969626449327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

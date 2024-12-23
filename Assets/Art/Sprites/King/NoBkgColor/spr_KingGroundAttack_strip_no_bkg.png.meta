@@ -872,7 +872,37 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingGroundAttack_strip_no_bkg_0: -6183610254670242308
+      spr_KingGroundAttack_strip_no_bkg_1: 7076035118276298070
+      spr_KingGroundAttack_strip_no_bkg_10: 6543156347075301820
+      spr_KingGroundAttack_strip_no_bkg_11: -5929799163912397436
+      spr_KingGroundAttack_strip_no_bkg_12: 4094029628894292839
+      spr_KingGroundAttack_strip_no_bkg_13: 8741616391838926684
+      spr_KingGroundAttack_strip_no_bkg_14: 2080053475500395792
+      spr_KingGroundAttack_strip_no_bkg_15: -8044619890009081141
+      spr_KingGroundAttack_strip_no_bkg_16: 1166819705215985792
+      spr_KingGroundAttack_strip_no_bkg_17: 6181084548343613547
+      spr_KingGroundAttack_strip_no_bkg_18: -7972838136951022903
+      spr_KingGroundAttack_strip_no_bkg_19: -3351062625440583851
+      spr_KingGroundAttack_strip_no_bkg_2: 391199480015779975
+      spr_KingGroundAttack_strip_no_bkg_20: 4381824235882808218
+      spr_KingGroundAttack_strip_no_bkg_21: 6903853673587648901
+      spr_KingGroundAttack_strip_no_bkg_22: -2162434755566967343
+      spr_KingGroundAttack_strip_no_bkg_23: 8611579566860325611
+      spr_KingGroundAttack_strip_no_bkg_24: -6000296557660994620
+      spr_KingGroundAttack_strip_no_bkg_25: 3738057210401141527
+      spr_KingGroundAttack_strip_no_bkg_26: -2143612597374008147
+      spr_KingGroundAttack_strip_no_bkg_27: 8062959773735099477
+      spr_KingGroundAttack_strip_no_bkg_28: 4619727867714497749
+      spr_KingGroundAttack_strip_no_bkg_29: 6810094216884574910
+      spr_KingGroundAttack_strip_no_bkg_3: -3036265742888317224
+      spr_KingGroundAttack_strip_no_bkg_4: -7694697552424628990
+      spr_KingGroundAttack_strip_no_bkg_5: 8984386731584684756
+      spr_KingGroundAttack_strip_no_bkg_6: -1261867471568962012
+      spr_KingGroundAttack_strip_no_bkg_7: -780646684774986105
+      spr_KingGroundAttack_strip_no_bkg_8: 489401361205487319
+      spr_KingGroundAttack_strip_no_bkg_9: -8646523744197296276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinJumpWithBkg_strip13_0: 5954031670789026586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

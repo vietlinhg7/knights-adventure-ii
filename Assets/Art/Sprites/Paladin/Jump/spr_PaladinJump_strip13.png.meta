@@ -447,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_PaladinJump_strip13_0: 6439754153298651097
+      spr_PaladinJump_strip13_1: 6657018627320348565
+      spr_PaladinJump_strip13_10: -2158845680152029764
+      spr_PaladinJump_strip13_11: -4107632516956349351
+      spr_PaladinJump_strip13_12: 4939739158469370682
+      spr_PaladinJump_strip13_2: 4853531683540502697
+      spr_PaladinJump_strip13_3: 8833196722418114436
+      spr_PaladinJump_strip13_4: -3799136038125340194
+      spr_PaladinJump_strip13_5: -3791791543038827929
+      spr_PaladinJump_strip13_6: 7646263688884567575
+      spr_PaladinJump_strip13_7: -6842189861801935951
+      spr_PaladinJump_strip13_8: -5373566401025830389
+      spr_PaladinJump_strip13_9: 5306597912858300035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_King2Combo_strip_with_color_0: 7132262756587032242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

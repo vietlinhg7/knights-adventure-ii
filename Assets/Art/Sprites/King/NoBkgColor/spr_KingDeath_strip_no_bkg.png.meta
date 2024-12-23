@@ -217,7 +217,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -231,7 +231,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -252,7 +252,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -1647,7 +1647,68 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_KingDeath_strip_no_bkg_0: -8717090693093350806
+      spr_KingDeath_strip_no_bkg_1: -6483550699556679600
+      spr_KingDeath_strip_no_bkg_10: -3542744598804352550
+      spr_KingDeath_strip_no_bkg_11: -835181898193329886
+      spr_KingDeath_strip_no_bkg_12: 4291225566572538237
+      spr_KingDeath_strip_no_bkg_13: -3055836024723683097
+      spr_KingDeath_strip_no_bkg_14: -3462166659824031057
+      spr_KingDeath_strip_no_bkg_15: -6573193597789782384
+      spr_KingDeath_strip_no_bkg_16: -491025266160292353
+      spr_KingDeath_strip_no_bkg_17: 1049207100117579543
+      spr_KingDeath_strip_no_bkg_18: -6530607250743132485
+      spr_KingDeath_strip_no_bkg_19: 6888077868349586979
+      spr_KingDeath_strip_no_bkg_2: 7420293449451512001
+      spr_KingDeath_strip_no_bkg_20: 6902026933324674545
+      spr_KingDeath_strip_no_bkg_21: 8745678001104460781
+      spr_KingDeath_strip_no_bkg_22: 7488496374209381895
+      spr_KingDeath_strip_no_bkg_23: 8627833679798364336
+      spr_KingDeath_strip_no_bkg_24: -9125498078659132323
+      spr_KingDeath_strip_no_bkg_25: 2814647894328173622
+      spr_KingDeath_strip_no_bkg_26: -4208733843712269289
+      spr_KingDeath_strip_no_bkg_27: -6500237509461538198
+      spr_KingDeath_strip_no_bkg_28: 4792480161347572105
+      spr_KingDeath_strip_no_bkg_29: 3061373431065229758
+      spr_KingDeath_strip_no_bkg_3: -4792919042262988636
+      spr_KingDeath_strip_no_bkg_30: -371720734748173528
+      spr_KingDeath_strip_no_bkg_31: 8249349438524387324
+      spr_KingDeath_strip_no_bkg_32: 8989058438085727693
+      spr_KingDeath_strip_no_bkg_33: 2434634145298435918
+      spr_KingDeath_strip_no_bkg_34: 5899986631956748199
+      spr_KingDeath_strip_no_bkg_35: 2464644498900354474
+      spr_KingDeath_strip_no_bkg_36: 2550920448160903784
+      spr_KingDeath_strip_no_bkg_37: 2942073487530681279
+      spr_KingDeath_strip_no_bkg_38: -2153968900615165319
+      spr_KingDeath_strip_no_bkg_39: 5541344545727683041
+      spr_KingDeath_strip_no_bkg_4: 8430911119448136150
+      spr_KingDeath_strip_no_bkg_40: 8994677381744988865
+      spr_KingDeath_strip_no_bkg_41: -664107647421272002
+      spr_KingDeath_strip_no_bkg_42: -5077459427003711964
+      spr_KingDeath_strip_no_bkg_43: 976432264860698363
+      spr_KingDeath_strip_no_bkg_44: 7547195269540297490
+      spr_KingDeath_strip_no_bkg_45: -8772323705277059533
+      spr_KingDeath_strip_no_bkg_46: 7898118306810245808
+      spr_KingDeath_strip_no_bkg_47: 3501362292854744481
+      spr_KingDeath_strip_no_bkg_48: 3530648797802408923
+      spr_KingDeath_strip_no_bkg_49: 6110027988326323448
+      spr_KingDeath_strip_no_bkg_5: -177406592002093308
+      spr_KingDeath_strip_no_bkg_50: -6929886118909778844
+      spr_KingDeath_strip_no_bkg_51: -3912060973529391708
+      spr_KingDeath_strip_no_bkg_52: 8057252970892195676
+      spr_KingDeath_strip_no_bkg_53: 2950646008018783787
+      spr_KingDeath_strip_no_bkg_54: 3059729257706053336
+      spr_KingDeath_strip_no_bkg_55: -6405558705182763807
+      spr_KingDeath_strip_no_bkg_56: 6574068878892138197
+      spr_KingDeath_strip_no_bkg_57: 7206510835073439340
+      spr_KingDeath_strip_no_bkg_58: 2458741965024956487
+      spr_KingDeath_strip_no_bkg_59: -3412614740843753175
+      spr_KingDeath_strip_no_bkg_6: 7961439821670381104
+      spr_KingDeath_strip_no_bkg_60: 3834257687543179065
+      spr_KingDeath_strip_no_bkg_7: 8618388531691094253
+      spr_KingDeath_strip_no_bkg_8: -4785318987897740804
+      spr_KingDeath_strip_no_bkg_9: -808450539315602592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

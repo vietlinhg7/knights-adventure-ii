@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class KnightController : MonoBehaviour
 {
@@ -9,9 +10,8 @@ public class KnightController : MonoBehaviour
     float invincibleTimer;
     public float speed = 2.5f;
     public float jumpForce = 2.5f;
-    //public int maxHealth = 5;
-    //public int health { get { return currentHealth; } }
-    //public int currentHealth;
+    public int maxHealth = 5;
+    public int health;
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider;
     float horizontal;
@@ -35,6 +35,118 @@ public class KnightController : MonoBehaviour
 
     private float attackTime = 0.21f;
     private float attackTime2 = 0.35f;
+
+    public Transform attackPoint;
+    public Transform attackPoint2;
+    public float attackRange = 0.5f;
+    public float attackRange2 = 1f;
+    public LayerMask enemyLayer;
+
+    public float knockbackForce = 10f; // Strength of the knockback force
+    public float knockbackUpwardForce = 5f; // Upward force to launch the player
+
+    private bool isStunned;
+    private bool dead = false;
+
+    public float stunDuration = 0.5f; // Duration for which the player is stunned
+
+    // Call this function with the position of the damage dealer
+    public void Hurt(Vector2 damageDealerPosition, int damage)  
+    {
+        if (isStunned) return; // Prevent applying knockback if already stunned
+
+        // Calculate the direction from the damage dealer to the player
+        Vector2 knockbackDirection = ((Vector2)transform.position - damageDealerPosition).normalized;
+
+        // Apply knockback force to the player
+        Vector2 knockbackVector = new Vector2(knockbackDirection.x * knockbackForce, knockbackUpwardForce);
+        rigidbody2d.linearVelocity = knockbackVector; // Override velocity for immediate response
+
+        // Start the stun process
+        health = health - damage;
+        if (health > 0)
+        {
+
+            StartCoroutine(StunCoroutine());
+            StartCoroutine(InvulnerableCoroutine(timeInvincible));
+        }
+        else
+        {
+            StartCoroutine(StunCoroutine());
+        }
+    }
+    private IEnumerator InvulnerableCoroutine(float timeInvincible)
+    {
+        // Temporarily disable collision with other layers except the Tilemap
+        int originalLayer = gameObject.layer;
+        gameObject.layer = LayerMask.NameToLayer("Dash");
+
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        float elapsedTime = 0f;
+        float blinkInterval = 0.1f; // Adjust the blink interval as needed
+
+        while (elapsedTime < timeInvincible)
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = !spriteRenderer.enabled; // Toggle visibility
+            }
+            yield return new WaitForSeconds(blinkInterval);
+            elapsedTime += blinkInterval;
+        }
+
+        // Ensure the sprite is visible when the invincibility ends
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = true;
+        }
+
+        // Revert the layer back to the original
+        gameObject.layer = originalLayer;
+    }
+
+    private IEnumerator StunCoroutine()
+    {
+        isStunned = true;
+        animator.SetTrigger("jump");
+
+        // Wait for the stun duration
+        yield return new WaitForSeconds(stunDuration);
+
+        // Wait until the player is grounded
+        while (!isGrounded())
+        {
+            yield return null; // Wait for the next frame
+        }
+        if (isGrounded())
+        {
+            rigidbody2d.linearVelocity = new Vector2(0f, 0f);
+        }
+        isStunned = false;
+
+        // Check if the player is dead
+        if (health <= 0)
+        {
+            dead = true;
+            animator.SetBool("dead", true);
+            animator.SetTrigger("die");
+        }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        // Set the Gizmo color
+        Gizmos.color = Color.red;
+
+        // Draw a wire sphere to represent the attack range
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        // Set the Gizmo color
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(attackPoint2.position, attackRange2);
+    }
     //void Launch()
     //{
     //    GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f,
@@ -66,10 +178,7 @@ public class KnightController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         tr = GetComponent<TrailRenderer>();
-        attackArea = transform.GetChild(0).gameObject;
-        attackArea2 = transform.GetChild(1).gameObject;
-        attackArea.SetActive(false);
-        attackArea2.SetActive(false);
+        health = maxHealth;
     }
 
     public void PlaySound(AudioClip clip)
@@ -79,7 +188,10 @@ public class KnightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dead) return;
+        animator.SetFloat("yVelocity", rigidbody2d.linearVelocity.y);
         animator.SetBool("isGrounded", isGrounded());
+        if (isStunned) return;
         animator.SetBool("attacking", attacking);
         if (isDashing)
         {
@@ -87,9 +199,9 @@ public class KnightController : MonoBehaviour
         }
         horizontal = Input.GetAxis("Horizontal");
         if (horizontal > 0.01f)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if (horizontal < -0.01f)
             transform.localScale = Vector3.one;
+        else if (horizontal < -0.01f)
+            transform.localScale = new Vector3(-1, 1, 1);
         if (attacking)
         {
             return;
@@ -111,7 +223,6 @@ public class KnightController : MonoBehaviour
         else if (Input.GetKey(KeyCode.X) && isGrounded())
         {
             Jump();
-            animator.SetTrigger("jump");
         }
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -134,10 +245,11 @@ public class KnightController : MonoBehaviour
         //animator.SetFloat("Look X", lookDirection.x);
         //animator.SetFloat("Look Y", lookDirection.y);
         animator.SetBool("run", horizontal != 0);
-        animator.SetFloat("yVelocity", rigidbody2d.linearVelocity.y);
     }
     private void FixedUpdate()
     {
+        if (dead) return;
+        if (isStunned) return;
         if (isDashing)
         {
             return;
@@ -166,17 +278,74 @@ public class KnightController : MonoBehaviour
     }
     private IEnumerator Dash()
     {
+        // Temporarily disable collision with other layers except the Tilemap
+        int originalLayer = gameObject.layer;
+        gameObject.layer = LayerMask.NameToLayer("Dash");
+
         canDash = false;
         isDashing = true;
+        animator.SetBool("dashing", true);
         animator.SetTrigger("dash");
-        rigidbody2d.linearVelocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
+        rigidbody2d.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         tr.emitting = true;
-        yield return new WaitForSeconds(dashingTime);
+
+        float dashEndTime = Time.time + dashingTime;
+        float afterImageInterval = 0.1f; // Interval between afterimages
+        float nextAfterImageTime = 0f;
+
+        while (Time.time < dashEndTime || isGrounded() == false)
+        {
+            if (Time.time >= nextAfterImageTime)
+            {
+                CreateAfterImage(); // Create afterimage
+                nextAfterImageTime = Time.time + afterImageInterval;
+            }
+
+            yield return null;
+        }
+
+        // Revert the layer back to the original
+        gameObject.layer = originalLayer;
+
         tr.emitting = false;
         isDashing = false;
+        animator.SetBool("dashing", false);
+
+        // Wait for the cooldown
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    private void CreateAfterImage()
+    {
+        // Assuming you have a prefab for the afterimage
+        GameObject afterImage = ObjectPooler.Instance.GetPooledObject("AfterImage"); // Object pool
+        if (afterImage != null)
+        {
+            // Set the afterimage's position, rotation, and scale to match the player
+            afterImage.transform.position = transform.position;
+            afterImage.transform.rotation = transform.rotation;
+            afterImage.transform.localScale = transform.localScale;
+
+            SpriteRenderer afterImageSR = afterImage.GetComponent<SpriteRenderer>();
+            SpriteRenderer playerSR = GetComponent<SpriteRenderer>();
+
+            if (afterImageSR != null && playerSR != null)
+            {
+                // Copy the sprite and color of the player
+                afterImageSR.sprite = playerSR.sprite;
+                afterImageSR.color = playerSR.color;
+            }
+
+            // Activate the afterimage
+            afterImage.SetActive(true);
+        }
+    }
+
+
+
+
+
     private IEnumerator Attack()
     {
         int count = 0;
@@ -185,18 +354,26 @@ public class KnightController : MonoBehaviour
             if (count % 2 == 0)
             {
                 attacking = true;
-                attackArea.SetActive(true);
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint2.position, attackRange2, enemyLayer);
+
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    Debug.Log(this.name + " hit " + enemy.name);
+                }
                 yield return new WaitForSeconds(attackTime);
                 rigidbody2d.linearVelocity = new Vector2(0f, 0f);
-                attackArea.SetActive(false);
             }
             else
             {
                 attacking = true;
-                attackArea2.SetActive(true);
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    Debug.Log(this.name + " hit " + enemy.name);
+                }
                 yield return new WaitForSeconds(attackTime);
                 rigidbody2d.linearVelocity = new Vector2(0f, 0f);
-                attackArea2.SetActive(false);
             }
             count = count + 1;
         } while (Input.GetKey(KeyCode.Z) && isGrounded());

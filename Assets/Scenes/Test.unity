@@ -72511,14 +72511,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
-    - target: {fileID: 1278205746724205888, guid: da07b9b73859f9749b90dba4d0e2d227, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5218493826333315427, guid: da07b9b73859f9749b90dba4d0e2d227, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 384
-      objectReference: {fileID: 0}
     - target: {fileID: 5473061532205777224, guid: da07b9b73859f9749b90dba4d0e2d227, type: 3}
       propertyPath: m_Layer
       value: 11

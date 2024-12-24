@@ -3,70 +3,84 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine.UIElements;
+using System.Drawing;
+using Color = UnityEngine.Color;
 
 public class KnightController : MonoBehaviour
 {
+    // Public Constants and Configurations
     public float timeInvincible = 2.0f;
-    bool isInvincible;
-    float invincibleTimer;
     public float speed = 2.5f;
     public float jumpForce = 2.5f;
     public int maxHealth = 5;
+    public float dashingPower = 24f;
+    public float dashingTime = 1f;
+    public float dashingCooldown = 1f;
+    public float attackRange = 0.5f;
+    public float attackRange2 = 1f;
+    public float knockbackForce = 10f;
+    public float knockbackUpwardForce = 5f;
+    public float stunDuration = 0.5f;
+    public float changeCooldown = 2f;
+    public float attackTime = 0.22f;
+    public float attackTime2 = 0.8f;
+    public float attackTime3 = 3f;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private TrailRenderer tr;
+    [SerializeField] private float maxChargeTime;
+    [SerializeField] private float attackMultiplier;
+    public ChargingBarController chargingBarController;
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Transform arrowSpawnPoint;
+
+    // Public State Variables
     public int health;
+    public int characterClass = 0;
+
+    // Components and References
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider;
-    float horizontal;
-    float vertical;
-    Vector2 lookDirection;
-    public int characterClass = 0;
+    private SpriteRenderer spriteRenderer;
     public Animator knightAnimator;
     public Animator archerAnimator;
     public Animator wizardAnimator;
     public Animator animator;
-    //public GameObject projectilePrefab;
-    AudioSource audioSource;
-    private SpriteRenderer spriteRenderer;
-    [SerializeField] private LayerMask groundLayer;
-    private bool canDash = true;
-    private bool isDashing;
-    public float dashingPower = 24f;
-    public float dashingTime = 1;
-    public float dashingCooldown = 1f;
-    [SerializeField] private TrailRenderer tr;
-    private GameObject attackArea = default;
-    private GameObject attackArea2 = default;
-
-    private bool attacking = false; 
-
-    private float attackTime = 0.22f;
-    private float attackTime2 = 0.8f;
-    private float attackTime3 = 0.35f;
-
     public Transform attackPoint;
     public Transform attackPoint2;
-    public float attackRange = 0.5f;
-    public float attackRange2 = 1f;
+    public AudioSource audioSource;
+
+    // Combat Areas and Layers
     public LayerMask enemyLayer;
 
-    public float knockbackForce = 10f; // Strength of the knockback force
-    public float knockbackUpwardForce = 5f; // Upward force to launch the player
+    // Input and Movement
+    float horizontal;
+    float vertical;
+    Vector2 lookDirection;
 
-    private bool isStunned;
+    // Dashing and Combat States
+    private bool canDash = true;
+    private bool isDashing = false;
+    private bool attacking = false;
+    private bool isStunned = false;
     private bool dead = false;
 
-    public float stunDuration = 0.5f; // Duration for which the player is stunned
+    // Invincibility
+    bool isInvincible;
+    float invincibleTimer;
+
+    // Class Changing
+    private bool canChangeClass = true;
+    private bool isChanging = false;
+
+    // Charge and Cooldowns
     private float chargeTime;
-    [SerializeField]
-    private float maxChargeTime;
-    [SerializeField]
-    private float attackMultiplier;
-    private bool canChangeClass = true; // Cooldown flag
-    private float changeCooldown = 2f; // Cooldown duration
-    private Color originalColor; // Original color of the sprite
-    private Color flashColor = Color.white; // Flash color
+
+    // Visual Feedback
+    private Color originalColor;
+    private Color flashColor = Color.white;
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
-    private bool isChanging = false;
+
 
     // Call this function with the position of the damage dealer
     public void Hurt(Vector2 damageDealerPosition, int damage)  
@@ -208,6 +222,7 @@ public class KnightController : MonoBehaviour
         animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
         shaderGUItext = Shader.Find("GUI/Text Shader");
         shaderSpritesDefault = Shader.Find("Sprites/Default");
+        chargingBarController.ShowBar(false);
     }
 
     public void PlaySound(AudioClip clip)
@@ -241,15 +256,15 @@ public class KnightController : MonoBehaviour
             if (invincibleTimer < 0)
                 isInvincible = false;
         }
-        if (Input.GetKey(KeyCode.Z) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Z) && isGrounded())
         {
             StartCoroutine(Attack());
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && canDash)
+        else if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
-        else if (Input.GetKey(KeyCode.X) && isGrounded())
+        else if (Input.GetKeyDown(KeyCode.X) && isGrounded())
         {
             Jump();
         }
@@ -366,6 +381,10 @@ public class KnightController : MonoBehaviour
         float dashEndTime = Time.time + dashingTime;
         float afterImageInterval = 0.1f; // Interval between afterimages
         float nextAfterImageTime = 0f;
+        Color color = spriteRenderer.color;
+        Color oldColor = color;
+        color.a = Mathf.Clamp(0.7f, 0f, 1f);
+        spriteRenderer.color = color;
 
         while (Time.time < dashEndTime || isGrounded() == false)
         {
@@ -380,6 +399,7 @@ public class KnightController : MonoBehaviour
 
         // Revert the layer back to the original
         gameObject.layer = originalLayer;
+        spriteRenderer.color = oldColor;
 
         tr.emitting = false;
         isDashing = false;
@@ -463,14 +483,26 @@ public class KnightController : MonoBehaviour
             rigidbody2d.linearVelocity = Vector2.zero;
             animator.SetBool("isCharging", true);
 
+            // Show the charging bar
+            chargingBarController.ShowBar(true);
+            chargingBarController.SetBarColor(Color.clear, Color.yellow);
             // Start charging while holding the key
             while (Input.GetKey(KeyCode.Z) && isGrounded())
             {
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Min(chargeTime, maxChargeTime); // Clamp charge time
+
+                if (chargeTime < attackTime2)
+                    chargingBarController.SetChargeLevel(chargeTime, attackTime2);
+                else
+                {
+                    chargingBarController.SetBarColor(Color.yellow, Color.red);
+                    chargingBarController.SetChargeLevel(chargeTime - attackTime2, maxChargeTime - attackTime2);
+                }
                 print(chargeTime);
                 yield return null;
             }
+            chargingBarController.ShowBar(false);
             if (chargeTime < attackTime2)
             {
                 animator.SetBool("isCharging", false);
@@ -478,14 +510,56 @@ public class KnightController : MonoBehaviour
             else
             {
                 // Calculate attack properties based on charge time
-                float chargePercentage = chargeTime / maxChargeTime;
-                attackMultiplier = 1f + chargePercentage; // E.g., up to 2x attack power
-                float attackDuration = attackTime2 + (chargePercentage * attackTime2);
+                if (chargeTime<maxChargeTime) attackMultiplier = 1f;
+                else attackMultiplier = 2f; // E.g., up to 2x attack power
+
+                // Instantiate the arrow
+                GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
+
+                // Calculate launch direction and force
+                Vector3 playerPosition = new Vector3(transform.position.x, transform.position.y, 0); // Replace with your player's position
+                Vector3 launchDirection = arrowSpawnPoint.position - playerPosition; // Calculate the direction from arrowSpawnPoint to player
+                launchDirection = new Vector3(launchDirection.x, 0, 0);
+                launchDirection.Normalize(); // Ensure the direction is normalized
+
+                // Pass the launch force to the arrow
+                ArrowController arrowController = arrow.GetComponent<ArrowController>();
+                if (arrowController != null)
+                {
+                    arrowController.launchDirection = launchDirection;
+                    arrowController.launchSpeed = 100f * attackMultiplier ;
+                }
+
+                // Trigger the release animation
                 animator.SetTrigger("release");
             }
+
             // Reset states
             chargeTime = 0f;
             attackMultiplier = 1f;
+            attacking = false;
+        }
+        else if (characterClass == 2)
+        {
+            attacking = true;
+            chargeTime = 0f;
+            rigidbody2d.linearVelocity = Vector2.zero;
+            animator.SetBool("isCharging", true);
+
+            // Start charging while holding the key
+            while (Input.GetKey(KeyCode.Z) && isGrounded() && chargeTime<attackTime3)
+            {
+                chargeTime += Time.deltaTime;
+                chargeTime = Mathf.Min(chargeTime, attackTime3); // Clamp charge time
+                print(chargeTime);
+                yield return null;
+            }
+            animator.SetBool("isCharging", false);
+            if (chargeTime == attackTime3) {
+                
+            }
+            // Reset states
+            chargeTime = 0f;
             attacking = false;
         }
     }

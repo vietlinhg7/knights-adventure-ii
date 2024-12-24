@@ -1,61 +1,43 @@
 fileFormatVersion: 2
-guid: 8268ff2f9c154b74b8c1a5ad6190406a
+guid: 357dd3e565bb4b34c998e85abbff0eac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7243615536323895233
-    second: spr_ArcherAttack_strip_NoBkg_0
+      213: 1970033071194899086
+    second: spr_NecromancerJump_strip50_0
   - first:
-      213: 6759640509303396367
-    second: spr_ArcherAttack_strip_NoBkg_1
+      213: 1086113806954389584
+    second: spr_NecromancerJump_strip50_1
   - first:
-      213: -2756151581962605931
-    second: spr_ArcherAttack_strip_NoBkg_2
+      213: 8484277630660878472
+    second: spr_NecromancerJump_strip50_2
   - first:
-      213: 7049770765452447389
-    second: spr_ArcherAttack_strip_NoBkg_3
+      213: -5034973541520343877
+    second: spr_NecromancerJump_strip50_3
   - first:
-      213: 4389246912445186638
-    second: spr_ArcherAttack_strip_NoBkg_4
+      213: 9070048480036613295
+    second: spr_NecromancerJump_strip50_4
   - first:
-      213: -1294576501022817952
-    second: spr_ArcherAttack_strip_NoBkg_5
+      213: 8217709473172779399
+    second: spr_NecromancerJump_strip50_5
   - first:
-      213: 3837543601976821850
-    second: spr_ArcherAttack_strip_NoBkg_6
+      213: -9219197174757279587
+    second: spr_NecromancerJump_strip50_6
   - first:
-      213: 8479706863885118980
-    second: spr_ArcherAttack_strip_NoBkg_7
+      213: 5551507926366374980
+    second: spr_NecromancerJump_strip50_7
   - first:
-      213: 999227502422942335
-    second: spr_ArcherAttack_strip_NoBkg_8
+      213: -5336500339634971591
+    second: spr_NecromancerJump_strip50_8
   - first:
-      213: -6525645608432652152
-    second: spr_ArcherAttack_strip_NoBkg_9
+      213: -5793527173290651890
+    second: spr_NecromancerJump_strip50_9
   - first:
-      213: -3284696614204815154
-    second: spr_ArcherAttack_strip_NoBkg_10
+      213: 4532386409990550157
+    second: spr_NecromancerJump_strip50_10
   - first:
-      213: 437343341963369431
-    second: spr_ArcherAttack_strip_NoBkg_11
-  - first:
-      213: 8427264711992668458
-    second: spr_ArcherAttack_strip_NoBkg_12
-  - first:
-      213: -6043847795777448549
-    second: spr_ArcherAttack_strip_NoBkg_13
-  - first:
-      213: -83384386637133886
-    second: spr_ArcherAttack_strip_NoBkg_14
-  - first:
-      213: -1867770427908137541
-    second: spr_ArcherAttack_strip_NoBkg_15
-  - first:
-      213: -894835629556058496
-    second: spr_ArcherAttack_strip_NoBkg_16
-  - first:
-      213: 9171838437411179919
-    second: spr_ArcherAttack_strip_NoBkg_17
+      213: 362977057942506770
+    second: spr_NecromancerJump_strip50_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -164,13 +146,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_0
+      name: spr_NecromancerJump_strip50_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 52
-        width: 25
-        height: 39
+        x: 38
+        y: 32
+        width: 28
+        height: 49
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +161,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1cf1614b3fd768460800000000000000
-      internalID: 7243615536323895233
+      spriteID: e82085cf3a6f65b10800000000000000
+      internalID: 1970033071194899086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_1
+      name: spr_NecromancerJump_strip50_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 33
+        width: 29
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050e921c0c6a21f00800000000000000
+      internalID: 1086113806954389584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_NecromancerJump_strip50_2
       rect:
         serializedVersion: 2
         x: 230
-        y: 52
-        width: 25
-        height: 39
+        y: 36
+        width: 35
+        height: 46
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f089e56aa311fcd50800000000000000
-      internalID: 6759640509303396367
+      spriteID: 880a55fad853eb570800000000000000
+      internalID: 8484277630660878472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_2
+      name: spr_NecromancerJump_strip50_3
       rect:
         serializedVersion: 2
-        x: 405
-        y: 52
-        width: 30
-        height: 39
+        x: 315
+        y: 41
+        width: 54
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59aecf92dbe20c9d0800000000000000
-      internalID: -2756151581962605931
+      spriteID: bbc703c8d3e202ab0800000000000000
+      internalID: -5034973541520343877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_3
+      name: spr_NecromancerJump_strip50_4
       rect:
         serializedVersion: 2
-        x: 591
-        y: 52
-        width: 26
-        height: 39
+        x: 412
+        y: 39
+        width: 53
+        height: 33
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9e0abee821d5d160800000000000000
-      internalID: 7049770765452447389
+      spriteID: fac672499094fdd70800000000000000
+      internalID: 9070048480036613295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_4
+      name: spr_NecromancerJump_strip50_5
       rect:
         serializedVersion: 2
-        x: 770
-        y: 52
-        width: 40
-        height: 38
+        x: 508
+        y: 36
+        width: 52
+        height: 35
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4286c7cfccb9ec30800000000000000
-      internalID: 4389246912445186638
+      spriteID: 78173dff93b2b0270800000000000000
+      internalID: 8217709473172779399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_5
+      name: spr_NecromancerJump_strip50_6
       rect:
         serializedVersion: 2
-        x: 950
-        y: 52
-        width: 37
-        height: 38
+        x: 603
+        y: 35
+        width: 45
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +293,108 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06187f1088db80ee0800000000000000
-      internalID: -1294576501022817952
+      spriteID: d98be44d305de0080800000000000000
+      internalID: -9219197174757279587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_6
+      name: spr_NecromancerJump_strip50_7
       rect:
         serializedVersion: 2
-        x: 1128
-        y: 52
+        x: 706
+        y: 32
+        width: 34
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c45debb0bea0d40800000000000000
+      internalID: 5551507926366374980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_NecromancerJump_strip50_8
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 32
+        width: 32
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c5e401731f0f5b0800000000000000
+      internalID: -5336500339634971591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_NecromancerJump_strip50_9
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 32
+        width: 32
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f00773bb1499fa0800000000000000
+      internalID: -5793527173290651890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_NecromancerJump_strip50_10
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 32
+        width: 33
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d827b402d6546ee30800000000000000
+      internalID: 4532386409990550157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_NecromancerJump_strip50_11
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 32
         width: 28
-        height: 36
+        height: 49
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,96 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a58c6e5e291b14530800000000000000
-      internalID: 3837543601976821850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_7
-      rect:
-        serializedVersion: 2
-        x: 1308
-        y: 52
-        width: 28
-        height: 36
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40e605d1778fda570800000000000000
-      internalID: 8479706863885118980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_8
-      rect:
-        serializedVersion: 2
-        x: 1488
-        y: 52
-        width: 28
-        height: 36
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f7268bb8e18fddd00800000000000000
-      internalID: 999227502422942335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_9
-      rect:
-        serializedVersion: 2
-        x: 1665
-        y: 52
-        width: 29
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 880b84bb4ef3075a0800000000000000
-      internalID: -6525645608432652152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_10
-      rect:
-        serializedVersion: 2
-        x: 1846
-        y: 52
-        width: 27
-        height: 37
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec8c46b15d96a62d0800000000000000
-      internalID: -3284696614204815154
+      spriteID: 21d874806bd890500800000000000000
+      internalID: 362977057942506770
       vertices: []
       indices: 
       edges: []
@@ -409,7 +413,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7603ecd80aad95444a8839ac3b81a8ae
+    spriteID: c8bf0c0c0212f6c4abcc277127583ca9
     internalID: 0
     vertices: []
     indices: 
@@ -419,17 +423,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spr_ArcherAttack_strip_NoBkg_0: 7243615536323895233
-      spr_ArcherAttack_strip_NoBkg_1: 6759640509303396367
-      spr_ArcherAttack_strip_NoBkg_10: -3284696614204815154
-      spr_ArcherAttack_strip_NoBkg_2: -2756151581962605931
-      spr_ArcherAttack_strip_NoBkg_3: 7049770765452447389
-      spr_ArcherAttack_strip_NoBkg_4: 4389246912445186638
-      spr_ArcherAttack_strip_NoBkg_5: -1294576501022817952
-      spr_ArcherAttack_strip_NoBkg_6: 3837543601976821850
-      spr_ArcherAttack_strip_NoBkg_7: 8479706863885118980
-      spr_ArcherAttack_strip_NoBkg_8: 999227502422942335
-      spr_ArcherAttack_strip_NoBkg_9: -6525645608432652152
+      spr_NecromancerJump_strip50_0: 1970033071194899086
+      spr_NecromancerJump_strip50_1: 1086113806954389584
+      spr_NecromancerJump_strip50_10: 4532386409990550157
+      spr_NecromancerJump_strip50_11: 362977057942506770
+      spr_NecromancerJump_strip50_2: 8484277630660878472
+      spr_NecromancerJump_strip50_3: -5034973541520343877
+      spr_NecromancerJump_strip50_4: 9070048480036613295
+      spr_NecromancerJump_strip50_5: 8217709473172779399
+      spr_NecromancerJump_strip50_6: -9219197174757279587
+      spr_NecromancerJump_strip50_7: 5551507926366374980
+      spr_NecromancerJump_strip50_8: -5336500339634971591
+      spr_NecromancerJump_strip50_9: -5793527173290651890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

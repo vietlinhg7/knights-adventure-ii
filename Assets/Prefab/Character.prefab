@@ -175,7 +175,7 @@ Animator:
   m_GameObject: {fileID: 4429245151274944443}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d46ee4670fc33946b72cc9a7bcccb47, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0b9a3281899c7044189a16526a2f34c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 4651170643930684877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.84, y: -1.2, z: 0}
+  m_LocalPosition: {x: -6.54, y: -2.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -305,7 +305,7 @@ MonoBehaviour:
   characterClass: 0
   knightAnimator: {fileID: 5856822095776217082}
   archerAnimator: {fileID: 8568303201354963876}
-  sorcererAnimator: {fileID: 0}
+  wizardAnimator: {fileID: 8639847470473797759}
   animator: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -324,6 +324,8 @@ MonoBehaviour:
   knockbackForce: 10
   knockbackUpwardForce: 5
   stunDuration: 0.5
+  maxChargeTime: 2
+  attackMultiplier: 0
 --- !u!95 &4862126175803801934
 Animator:
   serializedVersion: 7
@@ -544,8 +546,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8963957909722747882}
+  - component: {fileID: 8639847470473797759}
   m_Layer: 0
-  m_Name: Sorcerer
+  m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,6 +569,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1891594109807710064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8639847470473797759
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933966622590702027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5aa0235cc78e6ed4bac46a8d543e0aa8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8897675682823211910
 GameObject:
   m_ObjectHideFlags: 0

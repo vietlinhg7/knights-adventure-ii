@@ -8,6 +8,7 @@ public class ArrowController : MonoBehaviour
     public float launchSpeed;
     private Rigidbody2D rb; // Reference to the Rigidbody component
     private BoxCollider2D boxCollider;
+    [SerializeField] private int baseDamage = 1;
     public int damage;
 
     void Start()
@@ -19,7 +20,7 @@ public class ArrowController : MonoBehaviour
 
         // Launch the arrow with the specified force vector
         rb.AddForce(launchSpeed * launchDirection);
-        damage = (int)(launchSpeed / 100f);
+        damage = (int)(launchSpeed / 100f) * baseDamage;
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -28,6 +29,12 @@ public class ArrowController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;  // Make the Rigidbody kinematic to prevent further physics interactions
 
         Debug.Log("I hit " + collision.gameObject.name);
+        if (collision.gameObject.GetComponent<EnemyController>())
+        {
+            collision.gameObject.GetComponent<EnemyController>().Hurt(damage);
+            Destroy(rb.gameObject);
+        }
+        
         // Optionally, you can parent the arrow to the object it collided with
         transform.SetParent(collision.gameObject.transform);
         boxCollider.enabled = false;

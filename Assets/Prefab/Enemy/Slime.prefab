@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2412154749371957494}
   - component: {fileID: 226024278723048249}
   - component: {fileID: 2845234493482870875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 4367289792872251007, guid: d4e8a5c5eececab46942986a743fd7d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 7.5, y: 5}
@@ -125,15 +125,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a180d4ff442c38458ca0d7a0a316a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  range: 1
+  attackCooldown: 5
+  range: 0.5
   damage: 1
   health: 1
-  colliderDistance: 1
+  colliderDistance: 1.75
   boxCollider: {fileID: 2845234493482870875}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   animator: {fileID: 2569443848989128831}
 --- !u!50 &226024278723048249
 Rigidbody2D:
@@ -151,7 +154,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: 19f3fe7534c6bf942b250d2f859fe168, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

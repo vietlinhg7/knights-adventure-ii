@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1005637522484397227}
   - component: {fileID: 455046374663449786}
   - component: {fileID: 7356554967459443313}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -143,6 +143,10 @@ MonoBehaviour:
   jumpForce: 10
   maxHealth: 5
   health: 0
+  characterClass: 0
+  knightAnimator: {fileID: 0}
+  archerAnimator: {fileID: 0}
+  wizardAnimator: {fileID: 0}
   animator: {fileID: 5029667943307966162}
   groundLayer:
     serializedVersion: 2
@@ -151,16 +155,19 @@ MonoBehaviour:
   dashingTime: 0.5
   dashingCooldown: 0.1
   tr: {fileID: 0}
+  characterAttack: 0100000001000000
   attackPoint: {fileID: 2341151883331113816}
   attackPoint2: {fileID: 6212513232842531987}
   attackRange: 1.15
   attackRange2: 1.18
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   knockbackForce: 10
   knockbackUpwardForce: 5
   stunDuration: 0.5
+  maxChargeTime: 0
+  attackMultiplier: 0
 --- !u!95 &5029667943307966162
 Animator:
   serializedVersion: 7

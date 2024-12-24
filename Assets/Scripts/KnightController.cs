@@ -32,6 +32,7 @@ public class KnightController : MonoBehaviour
     public ChargingBarController chargingBarController;
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform arrowSpawnPoint;
+    [SerializeField] private int[] characterAttack = { 1, 1, 1 }; //Attack for each class
 
     // Public State Variables
     public int health;
@@ -64,6 +65,7 @@ public class KnightController : MonoBehaviour
     private bool isStunned = false;
     private bool dead = false;
 
+
     // Invincibility
     bool isInvincible;
     float invincibleTimer;
@@ -80,7 +82,6 @@ public class KnightController : MonoBehaviour
     private Color flashColor = Color.white;
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
-
 
     // Call this function with the position of the damage dealer
     public void Hurt(Vector2 damageDealerPosition, int damage)

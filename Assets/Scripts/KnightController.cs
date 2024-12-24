@@ -21,7 +21,7 @@ public class KnightController : MonoBehaviour
     public int characterClass = 0;
     public Animator knightAnimator;
     public Animator archerAnimator;
-    public Animator sorcererAnimator;
+    public Animator wizardAnimator;
     public Animator animator;
     //public GameObject projectilePrefab;
     AudioSource audioSource;
@@ -193,7 +193,7 @@ public class KnightController : MonoBehaviour
             return knightAnimator;
         else if (characterClass == 1)
             return archerAnimator;
-        else return sorcererAnimator;
+        else return wizardAnimator;
     }
     void Start()
     {
@@ -289,7 +289,7 @@ public class KnightController : MonoBehaviour
         StartCoroutine(FlashWhite());
 
         // Change the character class
-        characterClass = (characterClass + 1) % 2;
+        characterClass = (characterClass + 1) % 3;
 
         // Wait for cooldown duration
         yield return new WaitForSeconds(changeCooldown);

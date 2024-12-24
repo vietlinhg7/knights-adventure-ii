@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask playerLayer;
 
     private AudioSource audioSource;
     private Rigidbody2D rigidbody2d;
@@ -47,26 +48,16 @@ public class EnemyController : MonoBehaviour
 
         if (PlayerDetected())
         {
-            Debug.Log("Attack");
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
                 animator.SetTrigger("Attack");
+                Debug.Log("Attack");
             }
         }
 
         if (enemyPatrol != null)
             enemyPatrol.enabled = !PlayerDetected();
-    }
-
-    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
-    {
-        if (collision.gameObject.name.Contains("AttackArea"))
-        {
-            Debug.Log(collision.gameObject.transform);
-            rigidbody2d.AddForce(new Vector2(MathF.Sign(gameObject.transform.position.x - collision.gameObject.transform.position.x), 1) * 2.5f, ForceMode2D.Impulse);
-            StartCoroutine(Hurt());
-        }
     }
 
     #endregion Unity Messages
@@ -80,16 +71,48 @@ public class EnemyController : MonoBehaviour
 
     #region Enemy Behaviours
 
-    private IEnumerator Hurt()
+    public void Hurt(int damage)
     {
+        health -= damage;
+        if (health > 0)
+        {
+            StartCoroutine(Damaged());
+        }
+        else
+        {
+            StartCoroutine(Death());
+        }
+    }
+
+    private IEnumerator Damaged()
+    {
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = false;
+
+        }
         animator.SetTrigger("Hurt");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = true;
+        }
     }
 
     private IEnumerator Death()
     {
+
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = false;
+        }
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        if (enemyPatrol != null)
+        {
+            Destroy(enemyPatrol);
+        }
         DestroyImmediate(gameObject);
     }
 
@@ -98,12 +121,16 @@ public class EnemyController : MonoBehaviour
         RaycastHit2D hit =
             Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
-            0, Vector2.left, 0, groundLayer);
+            0, Vector2.left, 0, playerLayer);
 
-        if (hit.collider != null)
+        bool result = hit.collider != null;
+
+        if (result)
+        {
             player = hit.transform.GetComponent<KnightController>();
+        }
 
-        return hit.collider != null;
+        return result;
     }
 
     private void OnDrawGizmos()

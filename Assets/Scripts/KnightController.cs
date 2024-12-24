@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UIElements;
 
 public class KnightController : MonoBehaviour
 {
@@ -37,8 +38,9 @@ public class KnightController : MonoBehaviour
 
     private bool attacking = false; 
 
-    private float attackTime = 0.21f;
-    private float attackTime2 = 0.35f;
+    private float attackTime = 0.22f;
+    private float attackTime2 = 0.8f;
+    private float attackTime3 = 0.35f;
 
     public Transform attackPoint;
     public Transform attackPoint2;
@@ -53,6 +55,18 @@ public class KnightController : MonoBehaviour
     private bool dead = false;
 
     public float stunDuration = 0.5f; // Duration for which the player is stunned
+    private float chargeTime;
+    [SerializeField]
+    private float maxChargeTime;
+    [SerializeField]
+    private float attackMultiplier;
+    private bool canChangeClass = true; // Cooldown flag
+    private float changeCooldown = 2f; // Cooldown duration
+    private Color originalColor; // Original color of the sprite
+    private Color flashColor = Color.white; // Flash color
+    private Shader shaderGUItext;
+    private Shader shaderSpritesDefault;
+    private bool isChanging = false;
 
     // Call this function with the position of the damage dealer
     public void Hurt(Vector2 damageDealerPosition, int damage)  
@@ -192,6 +206,8 @@ public class KnightController : MonoBehaviour
         tr = GetComponent<TrailRenderer>();
         health = maxHealth;
         animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
     }
 
     public void PlaySound(AudioClip clip)
@@ -201,7 +217,7 @@ public class KnightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead) return;
+        if (dead || isChanging) return;
         animator.SetFloat("yVelocity", rigidbody2d.linearVelocity.y);
         animator.SetBool("isGrounded", isGrounded());
         if (isStunned) return;
@@ -239,7 +255,9 @@ public class KnightController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F) && isGrounded())
         {
-            ClassChange();
+            if (!canChangeClass) return; // Prevent class change if cooldown is active
+
+            StartCoroutine(ChangeClassRoutine());
         }
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -263,15 +281,48 @@ public class KnightController : MonoBehaviour
         //animator.SetFloat("Look Y", lookDirection.y);
         animator.SetBool("run", horizontal != 0);
     }
-    private void ClassChange()
+    private IEnumerator ChangeClassRoutine()
     {
+        canChangeClass = false;
+
+        // Flash the character white
+        StartCoroutine(FlashWhite());
+
+        // Change the character class
         characterClass = (characterClass + 1) % 2;
 
-        animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
+        // Wait for cooldown duration
+        yield return new WaitForSeconds(changeCooldown);
+
+        canChangeClass = true;
+    }
+
+    private IEnumerator FlashWhite()
+    {
+        isChanging = true;
+        int originalLayer = gameObject.layer;
+        gameObject.layer = LayerMask.NameToLayer("Dash");
+
+        originalColor = spriteRenderer.color;
+        // Flash the character white for a short duration
+        for (int i = 0; i < 3; i++) // Adjust the number of flashes as needed
+        {
+            spriteRenderer.material.shader = shaderGUItext;
+            yield return new WaitForSeconds(0.05f);
+            if (i==1)
+            {
+                animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
+            }
+            spriteRenderer.material.shader = shaderSpritesDefault;
+            yield return new WaitForSeconds(0.05f);
+        }
+        isChanging = false;
+        // Revert the layer back to the original
+        gameObject.layer = originalLayer;
     }
     private void FixedUpdate()
     {
-        if (dead) return;
+        if (dead || isChanging) return;
         if (isStunned) return;
         if (isDashing)
         {
@@ -372,35 +423,70 @@ public class KnightController : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        int count = 0;
-        do
+        if (characterClass == 0)
         {
-            if (count % 2 == 0)
+            int count = 0;
+            do
             {
-                attacking = true;
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint2.position, attackRange2, enemyLayer);
-
-                foreach (Collider2D enemy in hitEnemies)
+                if (count % 2 == 0)
                 {
-                    Debug.Log(this.name + " hit " + enemy.name);
+                    attacking = true;
+                    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint2.position, attackRange2, enemyLayer);
+
+                    foreach (Collider2D enemy in hitEnemies)
+                    {
+                        Debug.Log(this.name + " hit " + enemy.name);
+                    }
+                    yield return new WaitForSeconds(attackTime);
+                    rigidbody2d.linearVelocity = new Vector2(0f, 0f);
                 }
-                yield return new WaitForSeconds(attackTime);
-                rigidbody2d.linearVelocity = new Vector2(0f, 0f);
+                else
+                {
+                    attacking = true;
+                    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+                    foreach (Collider2D enemy in hitEnemies)
+                    {
+                        Debug.Log(this.name + " hit " + enemy.name);
+                    }
+                    yield return new WaitForSeconds(attackTime);
+                    rigidbody2d.linearVelocity = new Vector2(0f, 0f);
+                }
+                count = count + 1;
+            } while (Input.GetKey(KeyCode.Z) && isGrounded());
+            attacking = false;
+        }
+        else if (characterClass == 1)
+        {
+            attacking = true;
+            chargeTime = 0f;
+            rigidbody2d.linearVelocity = Vector2.zero;
+            animator.SetBool("isCharging", true);
+
+            // Start charging while holding the key
+            while (Input.GetKey(KeyCode.Z) && isGrounded())
+            {
+                chargeTime += Time.deltaTime;
+                chargeTime = Mathf.Min(chargeTime, maxChargeTime); // Clamp charge time
+                print(chargeTime);
+                yield return null;
+            }
+            if (chargeTime < attackTime2)
+            {
+                animator.SetBool("isCharging", false);
             }
             else
             {
-                attacking = true;
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-                foreach (Collider2D enemy in hitEnemies)
-                {
-                    Debug.Log(this.name + " hit " + enemy.name);
-                }
-                yield return new WaitForSeconds(attackTime);
-                rigidbody2d.linearVelocity = new Vector2(0f, 0f);
+                // Calculate attack properties based on charge time
+                float chargePercentage = chargeTime / maxChargeTime;
+                attackMultiplier = 1f + chargePercentage; // E.g., up to 2x attack power
+                float attackDuration = attackTime2 + (chargePercentage * attackTime2);
+                animator.SetTrigger("release");
             }
-            count = count + 1;
-        } while (Input.GetKey(KeyCode.Z) && isGrounded());
-        attacking = false;
+            // Reset states
+            chargeTime = 0f;
+            attackMultiplier = 1f;
+            attacking = false;
+        }
     }
 }

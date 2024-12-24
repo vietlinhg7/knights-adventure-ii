@@ -167,12 +167,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 51
-        width: 27
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 50
+        y: 52
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_1
       rect:
         serializedVersion: 2
-        x: 229
-        y: 51
-        width: 27
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 230
+        y: 52
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,12 +211,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_2
       rect:
         serializedVersion: 2
-        x: 404
-        y: 51
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 405
+        y: 52
+        width: 30
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,12 +233,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_3
       rect:
         serializedVersion: 2
-        x: 590
-        y: 51
-        width: 28
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 591
+        y: 52
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_4
       rect:
         serializedVersion: 2
-        x: 769
-        y: 51
-        width: 42
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 770
+        y: 52
+        width: 40
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_5
       rect:
         serializedVersion: 2
-        x: 949
-        y: 51
-        width: 39
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 950
+        y: 52
+        width: 37
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_6
       rect:
         serializedVersion: 2
-        x: 1127
-        y: 51
-        width: 30
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1128
+        y: 52
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_7
       rect:
         serializedVersion: 2
-        x: 1307
-        y: 51
-        width: 30
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1308
+        y: 52
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_8
       rect:
         serializedVersion: 2
-        x: 1487
-        y: 51
-        width: 30
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1488
+        y: 52
+        width: 28
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_9
       rect:
         serializedVersion: 2
-        x: 1664
-        y: 51
-        width: 31
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1665
+        y: 52
+        width: 29
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +387,12 @@ TextureImporter:
       name: spr_ArcherAttack_strip_NoBkg_10
       rect:
         serializedVersion: 2
-        x: 1777
-        y: 70
-        width: 24
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1846
+        y: 52
+        width: 27
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,165 +405,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_11
-      rect:
-        serializedVersion: 2
-        x: 1845
-        y: 51
-        width: 29
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7dbdb9ec371c11600800000000000000
-      internalID: 437343341963369431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_12
-      rect:
-        serializedVersion: 2
-        x: 1957
-        y: 68
-        width: 24
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a21f1822b98a3f470800000000000000
-      internalID: 8427264711992668458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_13
-      rect:
-        serializedVersion: 2
-        x: 2025
-        y: 51
-        width: 29
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9558209370ff1ca0800000000000000
-      internalID: -6043847795777448549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_14
-      rect:
-        serializedVersion: 2
-        x: 2137
-        y: 67
-        width: 24
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c70ea69752c7def0800000000000000
-      internalID: -83384386637133886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_15
-      rect:
-        serializedVersion: 2
-        x: 2205
-        y: 51
-        width: 29
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbd5e8211b85416e0800000000000000
-      internalID: -1867770427908137541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_16
-      rect:
-        serializedVersion: 2
-        x: 2317
-        y: 70
-        width: 24
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 086b2f76cb7e493f0800000000000000
-      internalID: -894835629556058496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_ArcherAttack_strip_NoBkg_17
-      rect:
-        serializedVersion: 2
-        x: 2385
-        y: 51
-        width: 135
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f8dca2fd67ae84f70800000000000000
-      internalID: 9171838437411179919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7603ecd80aad95444a8839ac3b81a8ae
     internalID: 0
     vertices: []
     indices: 
@@ -576,13 +422,6 @@ TextureImporter:
       spr_ArcherAttack_strip_NoBkg_0: 7243615536323895233
       spr_ArcherAttack_strip_NoBkg_1: 6759640509303396367
       spr_ArcherAttack_strip_NoBkg_10: -3284696614204815154
-      spr_ArcherAttack_strip_NoBkg_11: 437343341963369431
-      spr_ArcherAttack_strip_NoBkg_12: 8427264711992668458
-      spr_ArcherAttack_strip_NoBkg_13: -6043847795777448549
-      spr_ArcherAttack_strip_NoBkg_14: -83384386637133886
-      spr_ArcherAttack_strip_NoBkg_15: -1867770427908137541
-      spr_ArcherAttack_strip_NoBkg_16: -894835629556058496
-      spr_ArcherAttack_strip_NoBkg_17: 9171838437411179919
       spr_ArcherAttack_strip_NoBkg_2: -2756151581962605931
       spr_ArcherAttack_strip_NoBkg_3: 7049770765452447389
       spr_ArcherAttack_strip_NoBkg_4: 4389246912445186638

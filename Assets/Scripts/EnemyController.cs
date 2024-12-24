@@ -73,6 +73,10 @@ public class EnemyController : MonoBehaviour
 
     public void Hurt(int damage)
     {
+        if (health < 0)
+        {
+            return;
+        }
         health -= damage;
         if (health > 0)
         {

@@ -83,7 +83,7 @@ public class KnightController : MonoBehaviour
 
 
     // Call this function with the position of the damage dealer
-    public void Hurt(Vector2 damageDealerPosition, int damage)  
+    public void Hurt(Vector2 damageDealerPosition, int damage)
     {
         if (isStunned) return; // Prevent applying knockback if already stunned
 
@@ -213,7 +213,8 @@ public class KnightController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-       /* currentHealth = maxHealth*/;
+        /* currentHealth = maxHealth*/
+        ;
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -324,7 +325,7 @@ public class KnightController : MonoBehaviour
         {
             spriteRenderer.material.shader = shaderGUItext;
             yield return new WaitForSeconds(0.05f);
-            if (i==1)
+            if (i == 1)
             {
                 animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
             }
@@ -356,7 +357,7 @@ public class KnightController : MonoBehaviour
             rigidbody2d.linearVelocity = Vector2.up * jumpForce;
             animator.SetTrigger("jump");
         }
-        
+
     }
     private bool isGrounded()
     {
@@ -456,6 +457,7 @@ public class KnightController : MonoBehaviour
                     foreach (Collider2D enemy in hitEnemies)
                     {
                         Debug.Log(this.name + " hit " + enemy.name);
+                        enemy.GetComponent<EnemyController>().Hurt(characterAttack[characterClass]);
                     }
                     yield return new WaitForSeconds(attackTime);
                     rigidbody2d.linearVelocity = new Vector2(0f, 0f);
@@ -467,7 +469,9 @@ public class KnightController : MonoBehaviour
 
                     foreach (Collider2D enemy in hitEnemies)
                     {
-                        Debug.Log(this.name + " hit " + enemy.name);
+                        Debug.Log(this.name + " hit " + enemy.name); 
+                        enemy.GetComponent<EnemyController>().Hurt(characterAttack[characterClass]);
+
                     }
                     yield return new WaitForSeconds(attackTime);
                     rigidbody2d.linearVelocity = new Vector2(0f, 0f);

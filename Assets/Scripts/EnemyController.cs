@@ -3,14 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public enum EnemyState
-{
-    Idle,
-    Moving,
-    Hurt,
-    Death
-}
-
 public class EnemyController : MonoBehaviour
 {
     #region Declare Variables
@@ -19,44 +11,20 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private int damage;
 
-    [SerializeField] private Health health;
+    [SerializeField] private float health;
     [SerializeField] private float colliderDistance;
+    [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask groundLayer;
 
     private AudioSource audioSource;
     private Rigidbody2D rigidbody2d;
-    private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
 
-    private Health playerHealth;
+    private KnightController player;
     private EnemyPatrol enemyPatrol;
     private float cooldownTimer = Mathf.Infinity;
 
-    private EnemyState enemyState = EnemyState.Idle;
-    public EnemyState EnemyState
-    {
-        get { return enemyState; }
-        set
-        {
-            this.enemyState = value;
-
-            switch (enemyState)
-            {
-                case EnemyState.Idle:
-                    break;
-                case EnemyState.Moving:
-                    break;
-                case EnemyState.Hurt:
-                    break;
-                case EnemyState.Death:
-                    break;
-            }
-        }
-    }
-
     public Animator animator;
-
-    private Vector2 rootPosition = new Vector2();
 
     #endregion Declare Variables
 
@@ -70,26 +38,20 @@ public class EnemyController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
-
-        rootPosition = gameObject.transform.position;
-    }
-
-    private void OnEnable()
-    {
-        enemyState = EnemyState.Moving;
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
 
-        //Attack only when player in sight?
         if (PlayerDetected())
         {
+            Debug.Log("Attack");
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                animator.SetTrigger("meleeAttack");
+                animator.SetTrigger("Attack");
             }
         }
 
@@ -139,10 +101,11 @@ public class EnemyController : MonoBehaviour
             0, Vector2.left, 0, groundLayer);
 
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            player = hit.transform.GetComponent<KnightController>();
 
         return hit.collider != null;
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -156,7 +119,7 @@ public class EnemyController : MonoBehaviour
     private void DamagePlayer()
     {
         if (PlayerDetected())
-            playerHealth.Damage(damage);
+            player.Hurt(transform.position, damage);
     }
 
     #endregion Enemy Behaviours

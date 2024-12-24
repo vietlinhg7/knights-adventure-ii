@@ -9,7 +9,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [SerializeField] private float speed;
     private Vector3 initScale;
-    private bool movingLeft;
+    private bool movingLeft = false;
 
     [Header("Idle Behaviour")]
     [SerializeField] private float idleDuration;

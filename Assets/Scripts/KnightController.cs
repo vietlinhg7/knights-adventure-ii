@@ -32,6 +32,8 @@ public class KnightController : MonoBehaviour
     public ChargingBarController chargingBarController;
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform arrowSpawnPoint;
+    [SerializeField] private GameObject fireBallPrefab;
+    [SerializeField] private Transform fireBallSpawnPoint;
     [SerializeField] private int[] characterAttack = { 1, 1, 1 }; //Attack for each class
 
     // Public State Variables
@@ -551,21 +553,58 @@ public class KnightController : MonoBehaviour
             rigidbody2d.linearVelocity = Vector2.zero;
             animator.SetBool("isCharging", true);
 
+            // Instantiate the arrow
+            GameObject fireBall = Instantiate(fireBallPrefab, fireBallSpawnPoint.position, fireBallSpawnPoint.rotation);
+
             // Start charging while holding the key
             while (Input.GetKey(KeyCode.Z) && isGrounded() && chargeTime<attackTime3)
             {
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Min(chargeTime, attackTime3); // Clamp charge time
-                print(chargeTime);
                 yield return null;
             }
             animator.SetBool("isCharging", false);
             if (chargeTime == attackTime3) {
-                
+                // Find the nearest enemy
+                Transform nearestEnemy = FindNearestEnemy(fireBall.transform.position, "Enemy");
+                if (nearestEnemy != null)
+                {
+                    // Make the fireball target the nearest enemy
+                    fireBall.GetComponent<FireBallController>().SetTarget(nearestEnemy);
+                }
+                else
+                {
+                    fireBall.GetComponent<Animator>().SetTrigger("disappear");
+                    yield return new WaitForSeconds(0.933f);
+                    Destroy(fireBall);
+                }
+            }
+            else
+            {
+                Destroy(fireBall);
             }
             // Reset states
             chargeTime = 0f;
             attacking = false;
         }
+    }
+    private Transform FindNearestEnemy(Vector3 origin, string enemyLayerName)
+    {
+        int enemyLayer = LayerMask.NameToLayer(enemyLayerName);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(origin, 100f, 1 << enemyLayer); // 10f is the search radius
+        Transform nearestEnemy = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (var collider in colliders)
+        {
+            float distance = Vector2.Distance(origin, collider.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                nearestEnemy = collider.transform;
+            }
+        }
+
+        return nearestEnemy;
     }
 }

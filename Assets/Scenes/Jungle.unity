@@ -513,11 +513,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &372323680 stripped
+--- !u!1 &372323680
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 1278205746724205888, guid: da07b9b73859f9749b90dba4d0e2d227, type: 3}
   m_PrefabInstance: {fileID: 70079605}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1887587056}
+  - component: {fileID: 1887587064}
+  m_Layer: 0
+  m_Name: 'Knight (Missing Prefab with guid: da07b9b73859f9749b90dba4d0e2d227)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &410746588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1686,7 @@ Transform:
   m_GameObject: {fileID: 1441195534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6000054, y: 4.1, z: -10}
+  m_LocalPosition: {x: 9.455512, y: 4.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2053,11 +2065,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19af7106376df9f439ca2bee639f33cd, type: 3}
---- !u!4 &1887587056 stripped
+--- !u!4 &1887587056
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7558842188420802873, guid: da07b9b73859f9749b90dba4d0e2d227, type: 3}
   m_PrefabInstance: {fileID: 70079605}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372323680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.6, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1887587064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2394,7 +2416,7 @@ PrefabInstance:
     - target: {fileID: 6516804959789869650, guid: 95131a9e1553fbc4783ca4bc9ce30f82, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 1887587056}
+      objectReference: {fileID: 0}
     - target: {fileID: 9109878653180607003, guid: 95131a9e1553fbc4783ca4bc9ce30f82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.6

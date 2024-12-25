@@ -5,11 +5,13 @@ using System;
 using UnityEngine.UIElements;
 using System.Drawing;
 using Color = UnityEngine.Color;
+using Unity.VisualScripting;
 
 public class KnightController : MonoBehaviour
 {
     // Public Constants and Configurations
     public float timeInvincible = 2.0f;
+    public int wizardUpgrade = 1;
     public float speed = 2.5f;
     public float jumpForce = 2.5f;
     public int maxHealth = 5;
@@ -25,6 +27,8 @@ public class KnightController : MonoBehaviour
     public float attackTime = 0.22f;
     public float attackTime2 = 0.8f;
     public float attackTime3 = 3f;
+    public int manaCost = 20;
+    public int maxMana = 100;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private float maxChargeTime;
@@ -38,7 +42,11 @@ public class KnightController : MonoBehaviour
 
     // Public State Variables
     public int health;
+    public int mana;
     public int characterClass = 0;
+    public int arrows = 10;
+    public int armor = 100;
+    public bool wrecked;
 
     // Components and References
     private Rigidbody2D rigidbody2d;
@@ -98,7 +106,14 @@ public class KnightController : MonoBehaviour
         rigidbody2d.linearVelocity = knockbackVector; // Override velocity for immediate response
 
         // Start the stun process
-        health = health - damage;
+        if (characterClass == 0 && armor > 0) {
+            armor = armor - damage;
+            if (armor < 0)
+                wrecked = true;
+        }
+        else {
+            health = health - damage;
+        }
         if (health > 0)
         {
 
@@ -223,6 +238,7 @@ public class KnightController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         tr = GetComponent<TrailRenderer>();
         health = maxHealth;
+        mana = maxMana;
         animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
         shaderGUItext = Shader.Find("GUI/Text Shader");
         shaderSpritesDefault = Shader.Find("Sprites/Default");
@@ -260,7 +276,7 @@ public class KnightController : MonoBehaviour
             if (invincibleTimer < 0)
                 isInvincible = false;
         }
-        if (Input.GetKeyDown(KeyCode.Z) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Z) && (isGrounded() || characterClass == 1))
         {
             StartCoroutine(Attack());
         }
@@ -494,8 +510,9 @@ public class KnightController : MonoBehaviour
             chargingBarController.ShowBar(true);
             chargingBarController.SetBarColor(Color.clear, Color.yellow);
             // Start charging while holding the key
-            while (Input.GetKey(KeyCode.Z) && isGrounded())
+            while (Input.GetKey(KeyCode.Z))
             {
+                rigidbody2d.gravityScale = 0.2f;
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Min(chargeTime, maxChargeTime); // Clamp charge time
 
@@ -509,8 +526,9 @@ public class KnightController : MonoBehaviour
                 print(chargeTime);
                 yield return null;
             }
+            rigidbody2d.gravityScale = 2f;
             chargingBarController.ShowBar(false);
-            if (chargeTime < attackTime2)
+            if (chargeTime < attackTime2 || arrows == 0)
             {
                 animator.SetBool("isCharging", false);
             }
@@ -539,6 +557,7 @@ public class KnightController : MonoBehaviour
 
                 // Trigger the release animation
                 animator.SetTrigger("release");
+                arrows = arrows - 1;
             }
 
             // Reset states
@@ -555,6 +574,13 @@ public class KnightController : MonoBehaviour
 
             // Instantiate the arrow
             GameObject fireBall = Instantiate(fireBallPrefab, fireBallSpawnPoint.position, fireBallSpawnPoint.rotation);
+            FireBallController fireBallController = fireBall.GetComponent<FireBallController>();
+            fireBallController.damage = 60 + (wizardUpgrade * 20) ;
+            fireBallController.enemyLayer = enemyLayer;
+            fireBallController.explosionRadius = (1 + (wizardUpgrade - 1) * 0.5f);
+            fireBallController.explode = wizardUpgrade > 0;
+
+            fireBallController.transform.SetParent(this.gameObject.transform);
 
             // Start charging while holding the key
             while (Input.GetKey(KeyCode.Z) && isGrounded() && chargeTime<attackTime3)
@@ -564,13 +590,15 @@ public class KnightController : MonoBehaviour
                 yield return null;
             }
             animator.SetBool("isCharging", false);
+            fireBallController.transform.SetParent(null);
             if (chargeTime == attackTime3) {
                 // Find the nearest enemy
                 Transform nearestEnemy = FindNearestEnemy(fireBall.transform.position, "Enemy");
-                if (nearestEnemy != null)
+                if (nearestEnemy != null && mana >= manaCost)
                 {
                     // Make the fireball target the nearest enemy
                     fireBall.GetComponent<FireBallController>().SetTarget(nearestEnemy);
+                    mana = mana - manaCost;
                 }
                 else
                 {

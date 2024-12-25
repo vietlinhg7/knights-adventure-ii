@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     {
         // Can't find save file
         if (false)
-            SceneManager.LoadScene("Jungle");
+            SceneManager.LoadScene("Tutorial");
         else
         {
             startGame.interactable = false;
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Yes()
     {
-        SceneManager.LoadScene("Jungle");
+        SceneManager.LoadScene("Tutorial");
     }
     public void No()
     {

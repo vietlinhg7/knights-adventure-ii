@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private EnemyHealthBar healthBar;
+    [SerializeField] private GameObject coinPrefab;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask playerLayer;
 
@@ -129,7 +130,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         if (enemyPatrol != null)
         {
-            Destroy(enemyPatrol);
+            Destroy(enemyPatrol.gameObject);
         }
         DestroyImmediate(gameObject);
     }
@@ -137,6 +138,8 @@ public class EnemyController : MonoBehaviour
     private void DropCoin()
     {
         FindFirstObjectByType<KnightController>().AddCoin();
+        GameObject coin = Instantiate(coinPrefab);
+        coin.transform.SetParent(gameObject.transform, false);
     }
 
     private void Attack()

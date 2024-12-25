@@ -133,12 +133,14 @@ MonoBehaviour:
   colliderDistance: 1.75
   boxCollider: {fileID: 2845234493482870875}
   healthBar: {fileID: 1556625476255608442}
+  coinPrefab: {fileID: 7311404461082817089, guid: 7f70a9d5819fab24bafd2bb78d2b3c80, type: 3}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   playerLayer:
     serializedVersion: 2
     m_Bits: 2048
+  enemyPatrol: {fileID: 0}
   animator: {fileID: 2569443848989128831}
 --- !u!50 &226024278723048249
 Rigidbody2D:

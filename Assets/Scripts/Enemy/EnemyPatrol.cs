@@ -22,10 +22,17 @@ public class EnemyPatrol : MonoBehaviour
     {
         initScale = enemy.localScale;
     }
+
+    private void Start()
+    {
+        
+    }
+
     private void OnDisable()
     {
         anim.SetBool("Move", false);
     }
+
 
     private void Update()
     {

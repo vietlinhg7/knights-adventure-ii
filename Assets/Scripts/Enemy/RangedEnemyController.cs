@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class EnemyController : MonoBehaviour
+public class RangedEnemyController : MonoBehaviour
 {
     #region Declare Variables
 
@@ -14,8 +14,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private EnemyHealthBar healthBar;
-    [SerializeField] private GameObject coinPrefab;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask playerLayer;
 
@@ -24,12 +22,10 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private KnightController player;
-    public EnemyPatrol enemyPatrol;
+    private EnemyPatrol enemyPatrol;
     private float cooldownTimer = Mathf.Infinity;
 
     public Animator animator;
-    private float maxHealth;
-    private bool allowedToMove = true;
 
     #endregion Declare Variables
 
@@ -37,7 +33,6 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        maxHealth = health;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -59,7 +54,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (enemyPatrol != null && allowedToMove)
+        if (enemyPatrol != null)
             enemyPatrol.enabled = !PlayerDetected();
     }
 
@@ -90,17 +85,7 @@ public class EnemyController : MonoBehaviour
         {
             return;
         }
-
         health -= damage;
-        healthBar.UpdateHealth(health / maxHealth);
-
-        if (enemyPatrol != null)
-        {
-            enemyPatrol.enabled = false;
-            allowedToMove = false;
-        }
-
-
         if (health > 0)
         {
             StartCoroutine(Damaged());
@@ -113,33 +98,34 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Damaged()
     {
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = false;
+
+        }
         animator.SetTrigger("Hurt");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
         if (enemyPatrol != null)
         {
             enemyPatrol.enabled = true;
-            allowedToMove = true;
         }
     }
 
     private IEnumerator Death()
     {
-        DropCoin();
+
+        if (enemyPatrol != null)
+        {
+            enemyPatrol.enabled = false;
+        }
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         if (enemyPatrol != null)
         {
-            Destroy(enemyPatrol.gameObject);
+            Destroy(enemyPatrol);
         }
         DestroyImmediate(gameObject);
-    }
-
-    private void DropCoin()
-    {
-        FindFirstObjectByType<KnightController>().AddCoin();
-        GameObject coin = Instantiate(coinPrefab);
-        coin.transform.SetParent(gameObject.transform, false);
     }
 
     private void Attack()

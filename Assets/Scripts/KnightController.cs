@@ -103,10 +103,10 @@ public class KnightController : MonoBehaviour
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(gameObject);
+    //}
 
 
     // Call this function with the position of the damage dealer

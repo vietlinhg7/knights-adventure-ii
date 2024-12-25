@@ -22,6 +22,8 @@ public class LevelChanger : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }));
+            SaveLoadManager saveLoadManager = FindFirstObjectByType<SaveLoadManager>();
+            saveLoadManager.SavesData(hudController.knightController.gameObject, SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

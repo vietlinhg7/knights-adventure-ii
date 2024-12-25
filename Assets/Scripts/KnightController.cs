@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 using System.Drawing;
 using Color = UnityEngine.Color;
 using Unity.VisualScripting;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class KnightController : MonoBehaviour
 {
@@ -102,11 +104,6 @@ public class KnightController : MonoBehaviour
     private Color flashColor = Color.white;
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
 
     // Call this function with the position of the damage dealer

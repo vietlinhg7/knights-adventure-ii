@@ -12,8 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 3b83402d1d65c1545b88cef377cdf10a
   - enabled: 1
+    path: Assets/Scenes/Option.unity
+    guid: 9a3709e6374de864caaab998915e26b6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: e3ae944a76d74c8428f1f73acb22d75d
+  - enabled: 1
     path: Assets/Scenes/Jungle.unity
     guid: c32489b2f62ca284b960d04889f34f4b
+  - enabled: 1
+    path: Assets/Scenes/JungleShop.unity
+    guid: ed9c3888796c4614faa442617c889629
   - enabled: 1
     path: Assets/Scenes/Cave.unity
     guid: 148cf6337e0a68c45ba617baca6a3d2e
@@ -21,17 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/CaveShop.unity
     guid: 945d36781994c114981bbffee41afe1e
   - enabled: 1
-    path: Assets/Scenes/JungleShop.unity
-    guid: ed9c3888796c4614faa442617c889629
+    path: Assets/Scenes/Oakwood.unity
+    guid: 6c103e4b4f5f16e428fe00d9d676d65d
   - enabled: 1
     path: Assets/Scenes/OakShop.unity
     guid: 7ce8144e84765bd49b70303544fa3e41
-  - enabled: 1
-    path: Assets/Scenes/Option.unity
-    guid: 9a3709e6374de864caaab998915e26b6
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: e3ae944a76d74c8428f1f73acb22d75d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

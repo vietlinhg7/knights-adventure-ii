@@ -7,16 +7,20 @@ public class MainMenu : MonoBehaviour
     public Button loadGame;
     public Button startGame;
     public GameObject deleteSave;
+    private SaveLoadManager saveLoadManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        saveLoadManager = FindFirstObjectByType<SaveLoadManager>();
+
         // Can't find save file
-        if (true) loadGame.interactable = false;
+        if (saveLoadManager.LoadData() == null) loadGame.interactable = false;
     }
     public void StartGame()
     {
         // Can't find save file
-        if (false)
+        if (saveLoadManager.LoadData() == null)
             SceneManager.LoadScene("Tutorial");
         else
         {
@@ -26,6 +30,7 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadGame()
     {
+        SceneManager.LoadScene(saveLoadManager.LoadData().sceneIndex); 
 
     }
     public void Option()
@@ -41,6 +46,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Yes()
     {
+        saveLoadManager.DeleteData();
         SceneManager.LoadScene("Tutorial");
     }
     public void No()

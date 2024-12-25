@@ -67,6 +67,9 @@ public class KnightController : MonoBehaviour
     public AudioSource BowSound;  // Reference to AudioSource component
     public AudioSource SwordSound;  // Reference to AudioSource component
     public AudioSource MagicAtk;  // Reference to AudioSource component
+    public AudioSource MaleDead;  // Reference to AudioSource component
+    public AudioSource Charging;  // Reference to AudioSource component
+    public AudioSource Hit;  // Reference to AudioSource component
     // Combat Areas and Layers
     public LayerMask enemyLayer;
 
@@ -100,6 +103,12 @@ public class KnightController : MonoBehaviour
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+
     // Call this function with the position of the damage dealer
     public void Hurt(Vector2 damageDealerPosition, int damage)
     {
@@ -130,6 +139,7 @@ public class KnightController : MonoBehaviour
         else
         {
             StartCoroutine(StunCoroutine());
+
         }
     }
     private IEnumerator InvulnerableCoroutine(float timeInvincible)
@@ -166,7 +176,10 @@ public class KnightController : MonoBehaviour
     {
         isStunned = true;
         animator.SetTrigger("jump");
-
+        if (Hit != null)
+        {
+            Hit.Play();
+        }
         // Wait for the stun duration
         yield return new WaitForSeconds(stunDuration);
 
@@ -184,8 +197,13 @@ public class KnightController : MonoBehaviour
         // Check if the player is dead
         if (health <= 0)
         {
+            if (MaleDead != null)
+            {
+                MaleDead.Play();
+            }
             dead = true;
             animator.SetBool("dead", true);
+
             animator.SetTrigger("die");
         }
     }
@@ -297,6 +315,11 @@ public class KnightController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.X) && isGrounded())
         {
             Jump();
+            if (jumpSound != null)
+            {
+                if (!dead)
+                    jumpSound.Play();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.F) && isGrounded())
         {
@@ -385,12 +408,8 @@ public class KnightController : MonoBehaviour
         {
             rigidbody2d.linearVelocity = Vector2.up * jumpForce;
             animator.SetTrigger("jump");
+        }
 
-        }
-        if (jumpSound != null)
-        {
-            jumpSound.Play();
-        }
 
     }
     private bool isGrounded()
@@ -610,8 +629,15 @@ public class KnightController : MonoBehaviour
             {
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Min(chargeTime, attackTime3); // Clamp charge time
+                                                                 // Play charging sound if it's not already playing
+                if (!Charging.isPlaying)
+                {
+                    Charging.Play();
+                }
                 yield return null;
             }
+            Charging.Stop();
+
             animator.SetBool("isCharging", false);
             fireBallController.transform.SetParent(null);
             fireBallController.GetComponent<BoxCollider2D>().enabled = true;

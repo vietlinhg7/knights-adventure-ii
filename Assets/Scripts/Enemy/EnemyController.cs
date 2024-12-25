@@ -18,6 +18,13 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float noiseRange = 4f; // Distance at which noise plays
+    private bool isPlayerNearby = false;
+    //Sound effect
+    public AudioSource hit;
+    public AudioSource dead;
+    public AudioSource noise;
+    public AudioSource attack;
 
     private AudioSource audioSource;
     private Rigidbody2D rigidbody2d;
@@ -50,7 +57,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
-
+        CheckForPlayerProximity();
         if (PlayerDetected())
         {
             if (cooldownTimer >= attackCooldown)
@@ -114,6 +121,11 @@ public class EnemyController : MonoBehaviour
     private IEnumerator Damaged()
     {
         animator.SetTrigger("Hurt");
+        if (hit != null)
+        {
+            hit.Play();
+        }
+
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
         if (enemyPatrol != null)
@@ -127,6 +139,11 @@ public class EnemyController : MonoBehaviour
     {
         DropCoin();
         animator.SetTrigger("Death");
+        if (dead != null)
+        {
+            dead.Play();
+        }
+
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         if (enemyPatrol != null)
         {
@@ -142,9 +159,14 @@ public class EnemyController : MonoBehaviour
         coin.transform.SetParent(gameObject.transform, false);
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
         cooldownTimer = 0;
+        if(attack != null)
+        {
+            attack.Play();
+        }
+
         animator.SetTrigger("Attack");
     }
 
@@ -172,4 +194,41 @@ public class EnemyController : MonoBehaviour
     }
 
     #endregion Enemy Behaviours
+
+    #region Proximity Noise
+
+    private void CheckForPlayerProximity()
+    {
+        if (player == null)
+        {
+            return;
+        }
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        Debug.Log("Player detected: " + distanceToPlayer);  // Debugging the player detection
+        Console.WriteLine("Distance to player: " + distanceToPlayer);  // Debugging the distance
+
+        // Check if the player is within range to hear the slime
+        if (distanceToPlayer <= noiseRange)
+        {
+            if (!isPlayerNearby)
+            {
+                // Play noise sound if the player enters range
+                noise.Play();
+                isPlayerNearby = true;
+            }
+        }
+        else
+        {
+            if (isPlayerNearby)
+            {
+                // Stop noise sound if the player moves out of range
+                noise.Stop();
+                isPlayerNearby = false;
+            }
+        }
+    }
+
+
+    #endregion Proximity Noise
 }

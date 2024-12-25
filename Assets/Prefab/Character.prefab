@@ -357,13 +357,14 @@ Transform:
   m_GameObject: {fileID: 4651170643930684877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.54, y: -2.46, z: 0}
+  m_LocalPosition: {x: 3.089302, y: 33.42548, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2019545878357115850}
   - {fileID: 4846888226447651}
   - {fileID: 1771923336364546848}
+  - {fileID: 4845503353979239376}
   - {fileID: 8812873858435019143}
   - {fileID: 1954206262713905411}
   - {fileID: 1554347457354877481}
@@ -415,7 +416,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 999227502422942335, guid: 8268ff2f9c154b74b8c1a5ad6190406a, type: 3}
+  m_Sprite: {fileID: 4142739712832111827, guid: 96365a71bae352a4c94ff65caf80c0df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -452,6 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInvincible: 0.65
+  wizardUpgrade: 1
   speed: 7
   jumpForce: 13.33333
   maxHealth: 5
@@ -466,7 +468,9 @@ MonoBehaviour:
   changeCooldown: 2
   attackTime: 0.22
   attackTime2: 0.8
-  attackTime3: 3
+  attackTime3: 2.2
+  manaCost: 20
+  maxMana: 100
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -476,8 +480,15 @@ MonoBehaviour:
   chargingBarController: {fileID: 6374742654527344615}
   arrowPrefab: {fileID: 1418209362328727075, guid: 647e3a269276060439782062238bf7cd, type: 3}
   arrowSpawnPoint: {fileID: 1771923336364546848}
+  fireBallPrefab: {fileID: 7927860592655342726, guid: e7aebe0bc859fab488a1a616cda3f8e9, type: 3}
+  fireBallSpawnPoint: {fileID: 4845503353979239376}
+  characterAttack: 010000000100000001000000
   health: 0
+  mana: 0
   characterClass: 1
+  arrows: 10
+  armor: 100
+  wrecked: 0
   knightAnimator: {fileID: 5856822095776217082}
   archerAnimator: {fileID: 8568303201354963876}
   wizardAnimator: {fileID: 8639847470473797759}
@@ -575,7 +586,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.75, y: 2.25}
+    oldSize: {x: 1.875, y: 3.0625}
     newSize: {x: 7.5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -774,6 +785,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6921175334101421375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4845503353979239376}
+  m_Layer: 11
+  m_Name: FireBallSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4845503353979239376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921175334101421375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47, y: 2.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891594109807710064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6933966622590702027
 GameObject:
   m_ObjectHideFlags: 0

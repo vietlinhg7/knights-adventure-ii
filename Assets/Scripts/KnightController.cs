@@ -14,7 +14,6 @@ public class KnightController : MonoBehaviour
     public int wizardUpgrade = 1;
     public float speed = 2.5f;
     public float jumpForce = 2.5f;
-    public int maxHealth = 5;
     public float dashingPower = 24f;
     public float dashingTime = 1f;
     public float dashingCooldown = 1f;
@@ -28,7 +27,10 @@ public class KnightController : MonoBehaviour
     public float attackTime2 = 0.8f;
     public float attackTime3 = 3f;
     public int manaCost = 20;
+    public int maxHealth = 100;
     public int maxMana = 100;
+    public int maxArrows = 10;
+    public int maxArmor = 100;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private float maxChargeTime;
@@ -39,11 +41,12 @@ public class KnightController : MonoBehaviour
     [SerializeField] private GameObject fireBallPrefab;
     [SerializeField] private Transform fireBallSpawnPoint;
     [SerializeField] private int[] characterAttack = { 1, 1, 1 }; //Attack for each class
+    [SerializeField] private HUDController HUDController; //Attack for each class
 
     // Public State Variables
+    public int characterClass = 0;
     public int health;
     public int mana;
-    public int characterClass = 0;
     public int arrows = 10;
     public int armor = 100;
     public bool wrecked;
@@ -243,6 +246,9 @@ public class KnightController : MonoBehaviour
         shaderGUItext = Shader.Find("GUI/Text Shader");
         shaderSpritesDefault = Shader.Find("Sprites/Default");
         chargingBarController.ShowBar(false);
+
+        GameObject HUD = GameObject.FindWithTag("HUD");
+        HUDController = HUD.GetComponent<HUDController>();
     }
 
     public void PlaySound(AudioClip clip)

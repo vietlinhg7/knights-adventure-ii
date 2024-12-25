@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AfterImage
   - ObjectPooler
+  - HUD
   layers:
   - Default
   - TransparentFX

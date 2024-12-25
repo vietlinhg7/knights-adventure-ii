@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class HUDController : MonoBehaviour
     public Slider armorBar;
     public Slider arrowBar;
     public Slider manaBar;
+    public TMP_Text coinText;
     public KnightController knightController;
     private float cooldownTimer = 0f; // Timer to track cooldown
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,7 +20,7 @@ public class HUDController : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         knightController = player.GetComponent<KnightController>();
         changeClass(knightController.characterClass, 0f);
-        
+        coinText.text = knightController.currentCoin.ToString();
 
     }
     public void changeClass(int chosen, float cooldown)
@@ -56,6 +58,7 @@ public class HUDController : MonoBehaviour
         healthBar.value = (float)knightController.health / knightController.maxHealth;
         arrowBar.value = (float)knightController.arrows / knightController.maxArrows;
         manaBar.value = (float)knightController.mana / knightController.maxMana;
+        coinText.text = knightController.currentCoin.ToString();
         if (knightController.characterClass == 0) armorBar.value = (float)knightController.armor / knightController.maxArmor;
         else armorBar.value = 0f;
     }

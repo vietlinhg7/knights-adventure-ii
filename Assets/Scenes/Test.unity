@@ -4359,7 +4359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2555246319565685160, guid: 4dadcfa26ca698b43b529b3b60a9ed41, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9089641081314390282, guid: 4dadcfa26ca698b43b529b3b60a9ed41, type: 3}
       propertyPath: anim
@@ -80789,7 +80789,19 @@ MonoBehaviour:
   armorBar: {fileID: 622566665}
   arrowBar: {fileID: 535647739}
   manaBar: {fileID: 177756385}
-  knightController: {fileID: 0}
+  coinText: {fileID: 784765618}
+  knightController: {fileID: 1828261068}
+--- !u!114 &1828261068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6160397096717308309, guid: e62d5d9e8fc5c6447a165a3f75da5342, type: 3}
+  m_PrefabInstance: {fileID: 1023408323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0aa41a2c9dafe34dbf360e458437ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1849909370
 GameObject:
   m_ObjectHideFlags: 0
@@ -82197,7 +82209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3482502545439113845, guid: f3e7a89af9235594d832213cb3873262, type: 3}
       propertyPath: health
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

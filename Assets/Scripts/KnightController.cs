@@ -31,6 +31,7 @@ public class KnightController : MonoBehaviour
     public int maxMana = 100;
     public int maxArrows = 10;
     public int maxArmor = 100;
+    public int currentCoin = 10;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private float maxChargeTime;
@@ -639,5 +640,10 @@ public class KnightController : MonoBehaviour
         }
 
         return nearestEnemy;
+    }
+
+    public void AddCoin()
+    {
+        currentCoin++;
     }
 }

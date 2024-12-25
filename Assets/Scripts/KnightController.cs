@@ -341,7 +341,6 @@ public class KnightController : MonoBehaviour
     private IEnumerator FlashWhite()
     {
         isChanging = true;
-        int originalLayer = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("Dash");
 
         originalColor = spriteRenderer.color;
@@ -353,13 +352,14 @@ public class KnightController : MonoBehaviour
             if (i == 1)
             {
                 animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
+                HUDController.changeClass(characterClass, changeCooldown);
             }
             spriteRenderer.material.shader = shaderSpritesDefault;
             yield return new WaitForSeconds(0.05f);
         }
         isChanging = false;
         // Revert the layer back to the original
-        gameObject.layer = originalLayer;
+        gameObject.layer = LayerMask.NameToLayer("Player");
     }
     private void FixedUpdate()
     {
@@ -394,7 +394,6 @@ public class KnightController : MonoBehaviour
     private IEnumerator Dash()
     {
         // Temporarily disable collision with other layers except the Tilemap
-        int originalLayer = gameObject.layer;
         gameObject.layer = LayerMask.NameToLayer("Dash");
 
         canDash = false;
@@ -424,7 +423,7 @@ public class KnightController : MonoBehaviour
         }
 
         // Revert the layer back to the original
-        gameObject.layer = originalLayer;
+        gameObject.layer = LayerMask.NameToLayer("Player");
         spriteRenderer.color = oldColor;
 
         tr.emitting = false;

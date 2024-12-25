@@ -14,6 +14,8 @@ public class FireBallController : MonoBehaviour
     public bool explode = false;
     public LayerMask enemyLayer;
 
+    private Vector2 direction; // Direction to move toward the target
+
     public void SetTarget(Transform targetTransform)
     {
         target = targetTransform;
@@ -29,14 +31,18 @@ public class FireBallController : MonoBehaviour
             explosionCollider.radius = explosionRadius; // Set the collider radius
         }
 
+        // Set the initial direction toward the target
+        if (target != null)
+        {
+            direction = (target.position - transform.position).normalized;
+        }
     }
 
     void Update()
     {
-        if (target != null)
+        if (direction != Vector2.zero)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            transform.position += direction * speed * Time.deltaTime;
+            transform.position += (Vector3)direction * speed * Time.deltaTime;
         }
     }
 
@@ -113,6 +119,4 @@ public class FireBallController : MonoBehaviour
             transform.localScale = new Vector3(scaleX, scaleY, 1f);
         }
     }
-
-    // Optional: Draw explosion radius in the editor
 }

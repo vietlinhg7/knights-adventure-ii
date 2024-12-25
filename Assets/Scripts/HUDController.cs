@@ -17,10 +17,6 @@ public class HUDController : MonoBehaviour
     {
         GameObject player = GameObject.FindWithTag("Player");
         knightController = player.GetComponent<KnightController>();
-        healthBar.value = knightController.health / knightController.maxHealth;
-        arrowBar.value = knightController.arrows / knightController.maxArrows;
-        manaBar.value = knightController.mana / knightController.maxMana;
-        armorBar.value = knightController.armor / knightController.maxArmor;
         changeClass(knightController.characterClass, 0f);
         
 
@@ -57,6 +53,10 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        healthBar.value = (float)knightController.health / knightController.maxHealth;
+        arrowBar.value = (float)knightController.arrows / knightController.maxArrows;
+        manaBar.value = (float)knightController.mana / knightController.maxMana;
+        if (knightController.characterClass == 0) armorBar.value = (float)knightController.armor / knightController.maxArmor;
+        else armorBar.value = 0f;
     }
 }

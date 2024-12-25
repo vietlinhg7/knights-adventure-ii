@@ -149,7 +149,7 @@ MonoBehaviour:
   dead: {fileID: 6126208853088935020}
   noise: {fileID: 2714906168085675074}
   attack: {fileID: 8887038664859221001}
-  enemyPatrol: {fileID: 0}
+  enemyPatrol: {fileID: 9089641081314390282, guid: 4dadcfa26ca698b43b529b3b60a9ed41, type: 3}
   animator: {fileID: 2569443848989128831}
 --- !u!50 &226024278723048249
 Rigidbody2D:

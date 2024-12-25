@@ -69,6 +69,7 @@ public class ShopLogic : MonoBehaviour
         {
             IsShowing = !IsShowing;
             knightController.enabled = !knightController.enabled;
+            knightController.rigidbody2d.linearVelocity = Vector3.zero;
         }
     }
 
@@ -95,13 +96,13 @@ public class ShopLogic : MonoBehaviour
         switch (option)
         {
             case (int)ShopOption.RESTORE_ARMOR:
-                knightController.armor = Math.Min(knightController.armor + 1, knightController.maxArmor);
+                knightController.armor = knightController.maxArmor;
                 break;
             case (int)ShopOption.RESTORE_ARROW:
                 knightController.arrows = Math.Min(knightController.arrows + 1, knightController.maxArrows);
                 break;
             case (int)ShopOption.RESTORE_MANA:
-                knightController.mana = Math.Min(knightController.mana + 1, knightController.maxMana);
+                knightController.wizardUpgrade = knightController.wizardUpgrade + 1;
                 break;
             default:
                 break;

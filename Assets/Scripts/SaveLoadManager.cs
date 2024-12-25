@@ -74,7 +74,6 @@ public class SaveLoadManager : MonoBehaviour
             currentCoin = character.GetComponent<KnightController>().currentCoin,
             characterClass = character.GetComponent<KnightController>().characterClass,
             health = character.GetComponent<KnightController>().health,
-            mana = character.GetComponent<KnightController>().mana,
             arrows = character.GetComponent<KnightController>().arrows,
             armor = character.GetComponent<KnightController>().armor,
             wrecked = character.GetComponent<KnightController>().wrecked
@@ -129,12 +128,9 @@ public class SaveLoadManager : MonoBehaviour
             character.GetComponent<KnightController>().currentCoin = data.currentCoin;
             character.GetComponent<KnightController>().characterClass = data.characterClass;
             character.GetComponent<KnightController>().health = data.health;
-            character.GetComponent<KnightController>().mana = data.mana;
             character.GetComponent<KnightController>().arrows = data.arrows;
             character.GetComponent<KnightController>().armor = data.armor;
             character.GetComponent<KnightController>().wrecked = data.wrecked;
-
-            SceneManager.LoadScene(data.sceneIndex);
         }
     }
 

@@ -16,14 +16,14 @@ public class LevelChanger : MonoBehaviour
     {
         if (collision.gameObject.name == hudController.knightController.gameObject.name)
         {
+            SaveLoadManager saveLoadManager = FindFirstObjectByType<SaveLoadManager>();
+            saveLoadManager.SavesData(hudController.knightController.gameObject, SceneManager.GetActiveScene().buildIndex + 1);
             // Insert prompt here
             boxCollider.enabled = false;
             StartCoroutine(hudController.ShowBlackScreen(0.2f, 100, () =>
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }));
-            SaveLoadManager saveLoadManager = FindFirstObjectByType<SaveLoadManager>();
-            saveLoadManager.SavesData(hudController.knightController.gameObject, SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

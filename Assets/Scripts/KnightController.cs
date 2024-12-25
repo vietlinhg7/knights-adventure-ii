@@ -55,7 +55,7 @@ public class KnightController : MonoBehaviour
     public bool wrecked;
 
     // Components and References
-    private Rigidbody2D rigidbody2d;
+    public Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     public Animator knightAnimator;
@@ -202,6 +202,8 @@ public class KnightController : MonoBehaviour
             animator.SetBool("dead", true);
 
             animator.SetTrigger("die");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -259,7 +261,6 @@ public class KnightController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
         tr = GetComponent<TrailRenderer>();
-        health = maxHealth;
         mana = maxMana;
         animator.runtimeAnimatorController = GetAnimatorByCharacterClass().runtimeAnimatorController;
         shaderGUItext = Shader.Find("GUI/Text Shader");

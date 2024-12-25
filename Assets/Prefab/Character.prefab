@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInvincible: 0.65
-  wizardUpgrade: 1
+  wizardUpgrade: 0
   speed: 7
   jumpForce: 13.33333
   dashingPower: 10

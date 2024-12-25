@@ -63,7 +63,10 @@ public class KnightController : MonoBehaviour
     public Transform attackPoint;
     public Transform attackPoint2;
     public AudioSource audioSource;
-
+    public AudioSource jumpSound;  // Reference to AudioSource component
+    public AudioSource BowSound;  // Reference to AudioSource component
+    public AudioSource SwordSound;  // Reference to AudioSource component
+    public AudioSource MagicAtk;  // Reference to AudioSource component
     // Combat Areas and Layers
     public LayerMask enemyLayer;
 
@@ -382,6 +385,11 @@ public class KnightController : MonoBehaviour
         {
             rigidbody2d.linearVelocity = Vector2.up * jumpForce;
             animator.SetTrigger("jump");
+
+        }
+        if (jumpSound != null)
+        {
+            jumpSound.Play();
         }
 
     }
@@ -502,6 +510,10 @@ public class KnightController : MonoBehaviour
                     rigidbody2d.linearVelocity = new Vector2(0f, 0f);
                 }
                 count = count + 1;
+                if(SwordSound != null)
+                {
+                    SwordSound.Play();
+                }
             } while (Input.GetKey(KeyCode.Z) && isGrounded());
             attacking = false;
         }
@@ -560,7 +572,10 @@ public class KnightController : MonoBehaviour
                     arrowController.launchDirection = launchDirection;
                     arrowController.launchSpeed = 100f * attackMultiplier ;
                 }
-
+                if(BowSound != null)
+                {
+                    BowSound.Play();
+                }
                 // Trigger the release animation
                 animator.SetTrigger("release");
                 arrows = arrows - 1;
@@ -587,6 +602,8 @@ public class KnightController : MonoBehaviour
             fireBallController.explode = wizardUpgrade > 0;
 
             fireBallController.transform.SetParent(this.gameObject.transform);
+            fireBallController.GetComponent<BoxCollider2D>().enabled = false;
+            fireBallController.GetComponent<CircleCollider2D>().enabled = false;
 
             // Start charging while holding the key
             while (Input.GetKey(KeyCode.Z) && isGrounded() && chargeTime<attackTime3)
@@ -597,6 +614,8 @@ public class KnightController : MonoBehaviour
             }
             animator.SetBool("isCharging", false);
             fireBallController.transform.SetParent(null);
+            fireBallController.GetComponent<BoxCollider2D>().enabled = true;
+            fireBallController.GetComponent<CircleCollider2D>().enabled = true;
             if (chargeTime == attackTime3) {
                 // Find the nearest enemy
                 Transform nearestEnemy = FindNearestEnemy(fireBall.transform.position, "Enemy");
@@ -605,6 +624,10 @@ public class KnightController : MonoBehaviour
                     // Make the fireball target the nearest enemy
                     fireBall.GetComponent<FireBallController>().SetTarget(nearestEnemy);
                     mana = mana - manaCost;
+                    if (MagicAtk != null)
+                    {
+                        MagicAtk.Play();
+                    }
                 }
                 else
                 {

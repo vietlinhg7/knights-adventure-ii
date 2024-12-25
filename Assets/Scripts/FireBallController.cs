@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class FireBallController : MonoBehaviour
 {
     public float speed = 5f;
@@ -13,9 +13,8 @@ public class FireBallController : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Reference to the sprite renderer
     public bool explode = false;
     public LayerMask enemyLayer;
-
     private Vector2 direction; // Direction to move toward the target
-
+    public AudioSource explodehit;
     public void SetTarget(Transform targetTransform)
     {
         target = targetTransform;
@@ -71,6 +70,7 @@ public class FireBallController : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("explode");
+
         }
 
         // Disable movement and the box collider
@@ -87,7 +87,10 @@ public class FireBallController : MonoBehaviour
         if (explosionCollider != null && explosionCollider.enabled == false)
         {
             explosionCollider.enabled = true;
-
+            if (explodehit != null)
+            {
+                explodehit.Play();
+            }
             // Optionally damage all enemies within the explosion radius
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionCollider.radius, enemyLayer);
             foreach (Collider2D hit in hitEnemies)

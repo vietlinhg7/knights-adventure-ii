@@ -772,7 +772,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Build-Animation_0: -1252848364589521137
+      Build-Animation_1: 480791347354301570
+      Build-Animation_10: 7340992765391726404
+      Build-Animation_11: -174481984903510069
+      Build-Animation_12: 6858074857163385014
+      Build-Animation_13: 7122599747925538388
+      Build-Animation_14: -2358410989222942985
+      Build-Animation_15: 3738810775245782440
+      Build-Animation_16: -4754246227905849001
+      Build-Animation_17: -5869082235753926457
+      Build-Animation_18: 7694177654466877094
+      Build-Animation_19: 4081247975875603189
+      Build-Animation_2: 1966466330868146053
+      Build-Animation_20: -4787726110178780320
+      Build-Animation_21: 6145214256052705858
+      Build-Animation_22: 8482779397356866703
+      Build-Animation_23: -8637325303833355267
+      Build-Animation_24: 5116037232478028400
+      Build-Animation_25: 2498296025599668592
+      Build-Animation_3: 6453228590472025711
+      Build-Animation_4: -5834293208851418142
+      Build-Animation_5: 5503252924939811532
+      Build-Animation_6: -4224506761335746112
+      Build-Animation_7: 4324709468866750862
+      Build-Animation_8: 1297645874054826807
+      Build-Animation_9: 7354627526951512461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

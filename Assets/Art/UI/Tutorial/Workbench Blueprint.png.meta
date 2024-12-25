@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Workbench Blueprint_0: -9140502828398176622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

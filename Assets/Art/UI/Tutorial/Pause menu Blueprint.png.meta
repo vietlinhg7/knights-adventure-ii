@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pause menu Blueprint_0: 1834149394579078867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

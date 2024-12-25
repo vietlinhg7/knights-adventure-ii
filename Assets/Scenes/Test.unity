@@ -80455,6 +80455,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5182830372135891221, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 174
+      objectReference: {fileID: 0}
     - target: {fileID: 5830194597451105756, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -80535,6 +80539,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6192736828016149901, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 159.85461
+      objectReference: {fileID: 0}
     - target: {fileID: 6297382741721260362, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -80546,6 +80554,18 @@ PrefabInstance:
     - target: {fileID: 6746931422462073984, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149733202666243605, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 174.00461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291001122959614123, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 174.00461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531526741629262744, guid: 4403df7b693656c4cbcd2657e849f5f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 187.67429
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour
     public Slider manaBar;
     public TMP_Text coinText;
     public KnightController knightController;
+    public Image blackScreen;
     private float cooldownTimer = 0f; // Timer to track cooldown
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class HUDController : MonoBehaviour
         knightController = player.GetComponent<KnightController>();
         changeClass(knightController.characterClass, 0f);
         coinText.text = knightController.currentCoin.ToString();
+        StartCoroutine(HideBlackScreen(0.2f, 100));
 
     }
     public void changeClass(int chosen, float cooldown)
@@ -61,5 +63,36 @@ public class HUDController : MonoBehaviour
         coinText.text = knightController.currentCoin.ToString();
         if (knightController.characterClass == 0) armorBar.value = (float)knightController.armor / knightController.maxArmor;
         else armorBar.value = 0f;
+    }
+
+    public IEnumerator ShowBlackScreen(float duration = 1f, int step = 10, System.Action onDone = null)
+    {
+        knightController.enabled = false;
+        float alpha = 0;
+        for (int i = 0; i < step; i++)
+        {
+            alpha += 1f / step;
+            blackScreen.color = new Color(0, 0, 0, alpha);
+            yield return new WaitForSeconds(duration / step);
+        }
+        knightController.enabled = true;
+
+        if (onDone != null)
+        {
+            onDone();
+        }
+    }
+
+    public IEnumerator HideBlackScreen(float duration = 1f, int step = 10)
+    {
+        knightController.enabled = false;
+        float alpha = 1;
+        for (int i = 0; i < step; i++)
+        {
+            alpha -= 1f / step;
+            blackScreen.color = new Color(0, 0, 0, alpha);
+            yield return new WaitForSeconds(duration / step);
+        }
+        knightController.enabled = true;
     }
 }

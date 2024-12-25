@@ -159,7 +159,7 @@ public class EnemyController : MonoBehaviour
         coin.transform.SetParent(gameObject.transform, false);
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
         cooldownTimer = 0;
         if(attack != null)

@@ -8,7 +8,10 @@ public class PlayerSpawnPoint : MonoBehaviour
     {
         GameObject player = GameObject.FindWithTag("Player");
         player.transform.position = gameObject.transform.position;
-        CinemachineCamera.Target.TrackingTarget = player.transform;
+        if (CinemachineCamera != null)
+        {
+            CinemachineCamera.Target.TrackingTarget = player.transform;
+        }
     }
 
 }

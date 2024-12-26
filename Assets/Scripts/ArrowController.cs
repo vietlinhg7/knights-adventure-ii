@@ -8,7 +8,7 @@ public class ArrowController : MonoBehaviour
     public float launchSpeed;
     private Rigidbody2D rb; // Reference to the Rigidbody component
     private BoxCollider2D boxCollider;
-    [SerializeField] private int baseDamage = 1;
+    [SerializeField] private int baseDamage = 50;
     public int damage;
 
     void Start()

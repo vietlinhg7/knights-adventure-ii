@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 5
   range: 0.5
-  damage: 1
-  health: 10
+  damage: 15
+  health: 125
   colliderDistance: 1.75
   boxCollider: {fileID: 2845234493482870875}
   healthBar: {fileID: 1556625476255608442}

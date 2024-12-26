@@ -476,11 +476,11 @@ MonoBehaviour:
   attackTime2: 0.8
   attackTime3: 2.2
   manaCost: 20
-  maxHealth: 5
+  maxHealth: 100
   maxMana: 100
   maxArrows: 10
   maxArmor: 100
-  currentCoin: 10
+  currentCoin: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -492,14 +492,15 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 1771923336364546848}
   fireBallPrefab: {fileID: 7927860592655342726, guid: e7aebe0bc859fab488a1a616cda3f8e9, type: 3}
   fireBallSpawnPoint: {fileID: 4845503353979239376}
-  characterAttack: 010000000100000001000000
+  characterAttack: 140000003200000064000000
   HUDController: {fileID: 0}
   characterClass: 1
-  health: 0
+  health: 100
   mana: 0
   arrows: 10
   armor: 100
   wrecked: 0
+  rigidbody2d: {fileID: 0}
   knightAnimator: {fileID: 5856822095776217082}
   archerAnimator: {fileID: 8568303201354963876}
   wizardAnimator: {fileID: 8639847470473797759}

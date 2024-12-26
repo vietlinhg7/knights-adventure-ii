@@ -92,18 +92,48 @@ public class ShopLogic : MonoBehaviour
             return;
         }
 
-        knightController.currentCoin--;
         switch (option)
         {
             case (int)ShopOption.RESTORE_ARMOR:
-                knightController.armor = knightController.maxArmor;
-                break;
+                {
+                    if (knightController.armor < knightController.maxArmor)
+                    {
+                        knightController.currentCoin--;
+                        knightController.armor = knightController.maxArmor;
+                        break;
+                    }
+                    else
+                    {
+                        coroutineNotify = StartCoroutine(Notify("You already have full armor!"));
+                        break;
+                    }
+                }
             case (int)ShopOption.RESTORE_ARROW:
-                knightController.arrows = Math.Min(knightController.arrows + 1, knightController.maxArrows);
-                break;
+                {
+                    if (knightController.arrows < knightController.maxArrows)
+                    {
+                        knightController.currentCoin--;
+                        knightController.arrows = Math.Min(knightController.arrows + 1, knightController.maxArrows);
+                        break;
+                    }
+                    else
+                    {
+                        coroutineNotify = StartCoroutine(Notify("You cannot carry more arrows!"));
+                        break;
+                    }
+                }
             case (int)ShopOption.RESTORE_MANA:
-                knightController.wizardUpgrade = knightController.wizardUpgrade + 1;
-                break;
+                if (knightController.wizardUpgrade < 5)
+                {
+                    knightController.currentCoin--;
+                    knightController.wizardUpgrade = knightController.wizardUpgrade + 1;
+                    break;
+                }
+                else
+                {
+                    coroutineNotify = StartCoroutine(Notify("Your spell can't be upgraded more!"));
+                    break;
+                }
             default:
                 break;
         }

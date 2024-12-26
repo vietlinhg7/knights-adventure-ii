@@ -1,6 +1,8 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
@@ -15,9 +17,13 @@ public class HUDController : MonoBehaviour
     public KnightController knightController;
     public Image blackScreen;
     private float cooldownTimer = 0f; // Timer to track cooldown
+    public GameObject pauseScreen;
+    public bool pause = false;
+    public GameObject Frame;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        pause = false;
         GameObject player = GameObject.FindWithTag("Player");
         knightController = player.GetComponent<KnightController>();
         changeClass(knightController.characterClass, 0f);
@@ -94,5 +100,37 @@ public class HUDController : MonoBehaviour
             yield return new WaitForSeconds(duration / step);
         }
         knightController.enabled = true;
+    }
+
+    public void Pause()
+    {
+        pause = true;
+        pauseScreen.SetActive(true);
+    }
+    public void Continue()
+    {
+        pause = false;
+        pauseScreen.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Option()
+    {
+        Frame.SetActive(true);
+    }
+    
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Exit()
+    {
+        print("Exit");
+        Application.Quit();
     }
 }

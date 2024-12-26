@@ -278,7 +278,7 @@ public class KnightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead || isChanging) return;
+        if (dead || isChanging || HUDController.pause) return;
         animator.SetFloat("yVelocity", rigidbody2d.linearVelocity.y);
         animator.SetBool("isGrounded", isGrounded());
         if (isStunned) return;
@@ -388,7 +388,7 @@ public class KnightController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (dead || isChanging) return;
+        if (dead || isChanging || HUDController.pause) return;
         if (isStunned) return;
         if (isDashing)
         {

@@ -8,6 +8,7 @@ public class OptionController : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public GameObject Frame;
 
     private void Start()
     {
@@ -35,5 +36,9 @@ public class OptionController : MonoBehaviour
     {
         // Load the "Menu" scene when the back button is pressed
         SceneManager.LoadScene("Menu");
+    }
+    public void TurnOff()
+    {
+        Frame.SetActive(false);
     }
 }

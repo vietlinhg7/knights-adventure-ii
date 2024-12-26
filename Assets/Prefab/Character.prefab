@@ -478,7 +478,7 @@ MonoBehaviour:
   manaCost: 20
   maxHealth: 100
   maxMana: 100
-  maxArrows: 10
+  maxArrows: 20
   maxArmor: 100
   currentCoin: 0
   groundLayer:
@@ -494,7 +494,7 @@ MonoBehaviour:
   fireBallSpawnPoint: {fileID: 4845503353979239376}
   characterAttack: 140000003200000064000000
   HUDController: {fileID: 0}
-  characterClass: 1
+  characterClass: 0
   health: 100
   mana: 0
   arrows: 10

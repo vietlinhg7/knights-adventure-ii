@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public Button startGame;
     public GameObject deleteSave;
     private SaveLoadManager saveLoadManager;
+    public GameObject Frame;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,7 +36,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Option()
     {
-        SceneManager.LoadScene("Option");
+        Frame.SetActive(true);
     }
 
     // Update is called once per frame

@@ -28,6 +28,7 @@ public class HUDController : MonoBehaviour
         knightController = player.GetComponent<KnightController>();
         changeClass(knightController.characterClass, 0f);
         coinText.text = knightController.currentCoin.ToString();
+        blackScreen.gameObject.SetActive(true);
         StartCoroutine(HideBlackScreen(0.2f, 100));
 
     }
@@ -73,6 +74,7 @@ public class HUDController : MonoBehaviour
 
     public IEnumerator ShowBlackScreen(float duration = 1f, int step = 10, System.Action onDone = null)
     {
+        blackScreen.gameObject.SetActive(true);
         knightController.enabled = false;
         float alpha = 0;
         for (int i = 0; i < step; i++)
@@ -99,6 +101,7 @@ public class HUDController : MonoBehaviour
             blackScreen.color = new Color(0, 0, 0, alpha);
             yield return new WaitForSeconds(duration / step);
         }
+        blackScreen.gameObject.SetActive(false);
         knightController.enabled = true;
     }
 
